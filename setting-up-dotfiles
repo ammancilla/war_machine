@@ -12,7 +12,7 @@ VIMRC
 
 TMUX.CONF
 1. Install TPM · https://github.com/tmux-plugins/tpm#installation
-2. Install fzf (for extrakto plugin)
+2. Install fzf (for extrakto plugin) · https://github.com/laktak/extrakto
 
 RANDOM
 - Install Dracula zsh theme · https://draculatheme.com/zsh/
