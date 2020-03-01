@@ -17,10 +17,10 @@ This is the machine I use to hack and change the world using a keyboard.
 
 ### Development
 * Vim
-* Docker / Compose
 * Git
-* The fuck
-* gh
+* Docker / Compose
+* gh · https://github.com/jdxcode/gh
+* thefuck · https://github.com/nvbn/thefuck
 
 ### Operations
 * Watch
