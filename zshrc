@@ -4,9 +4,6 @@ export ZSH=$HOME/.oh-my-zsh
 # -- Theme
 ZSH_THEME="dracula"
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
-
 # -- Plugins
 plugins=(git gh kube-ps1)
 
@@ -22,8 +19,9 @@ export PATH=/urs/local/bin/vim:$PATH
 export WAR_MACHINE=/Users/apolonio/src/github.com/ammancilla/war_marchine
 
 # -- Aliases
-alias zshconfig='vim ~/.zshrc'
 alias zshload='source ~/.zshrc'
+alias zshconfig='vim ~/.zshrc'
+alias vimconfig='vim ~/.vimrc'
 alias tmuxconfig='vim ~/.tmux.conf'
 alias x='tmux new -s ${PWD##*/}'
 alias xk='tmux kill-session -t ${PWD##*/}'
