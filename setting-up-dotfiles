@@ -1,0 +1,17 @@
+1. Clone war_machine repo
+2. Export $WAR_MACHINE to the location of the war_machine repo
+
+
+VIMRC
+0. Make sure vim is compiled with python version 3.5+
+1. Install VimPlug · https://github.com/junegunn/vim-plug#vim
+2. Run :PlugInstall (install plugins)
+3. Compile/Install YCM before using the YouCompleteMe plugin · https://github.com/ycm-core/YouCompleteMe#macos · (./$HOME/.vim/plugged/YouCompleteMe./install.py)
+4. Install NerdFont · https://github.com/ryanoasis/nerd-fonts#font-installation · https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack
+
+TMUX.CONF
+1. Install TPM · https://github.com/tmux-plugins/tpm#installation
+2. Install fzf (for extrakto plugin)
+
+RANDOM
+- Install Dracula zsh theme · https://draculatheme.com/zsh/
