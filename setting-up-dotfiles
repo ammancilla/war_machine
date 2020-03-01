@@ -8,6 +8,7 @@ VIMRC
 2. Run :PlugInstall (install plugins)
 3. Compile/Install YCM before using the YouCompleteMe plugin · https://github.com/ycm-core/YouCompleteMe#macos · (./$HOME/.vim/plugged/YouCompleteMe./install.py)
 4. Install NerdFont · https://github.com/ryanoasis/nerd-fonts#font-installation · https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack
+5. Install vim-terraform plugin (not possible via Plugin manager) · https://github.com/hashivim/vim-terraform#installation
 
 TMUX.CONF
 1. Install TPM · https://github.com/tmux-plugins/tpm#installation
