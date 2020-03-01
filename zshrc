@@ -24,6 +24,6 @@ export WAR_MACHINE=/Users/apolonio/src/github.com/ammancilla/war_marchine
 # -- Aliases
 alias zshconfig="vim ~/.zshrc"
 alias zshload="source ~/.zshrc"
-alias x="tmux new -s ${PWD##*/}"
-alias xk="tmux kill-session -t ${PWD##*/}"
-alias xa="tmux attach -t ${PWD##*/}"
+alias x='tmux new -s ${PWD##*/}'
+alias xk='tmux kill-session -t ${PWD##*/}'
+alias xa='tmux attach -t ${PWD##*/}'
