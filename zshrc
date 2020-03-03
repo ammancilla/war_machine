@@ -26,3 +26,6 @@ alias tmuxconfig='vim ~/.tmux.conf'
 alias x='tmux new -s ${PWD##*/}'
 alias xk='tmux kill-session -t ${PWD##*/}'
 alias xa='tmux attach -t ${PWD##*/}'
+
+# Libs
+eval $(thefuck --alias)
