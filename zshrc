@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="dracula"
 
 # -- Plugins
-plugins=(git gh kube-ps1)
+plugins=(git git-open gh kube-ps1)
 
 # -- Initialize Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh
@@ -26,6 +26,7 @@ alias tmuxconfig='vim ~/.tmux.conf'
 alias x='tmux new -s ${PWD##*/}'
 alias xk='tmux kill-session -t ${PWD##*/}'
 alias xa='tmux attach -t ${PWD##*/}'
+alias gop='git-open'
 
 # Libs
 eval $(thefuck --alias)
