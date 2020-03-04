@@ -16,7 +16,7 @@ source $ZSH/oh-my-zsh.sh
 # -- Exports
 export LANG=en_US.UTF-8
 export PATH=/urs/local/bin/vim:$PATH
-export WAR_MACHINE=/Users/apolonio/src/github.com/ammancilla/war_marchine
+export WAR_MACHINE=/Users/apolonio/src/github.com/ammancilla/war_machine
 
 # -- Aliases
 alias zshload='source ~/.zshrc'
