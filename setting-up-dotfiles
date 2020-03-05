@@ -2,6 +2,9 @@
 2. Export $WAR_MACHINE to the location of the war_machine repo
 
 
+RUBY
+0. Install readline (brew install readline) before installing ruby. Otherwise you'll have problems using PRY and BYEBUG
+
 VIMRC
 0. Make sure vim is compiled with python version 3.5+
 1. Install VimPlug · https://github.com/junegunn/vim-plug#vim
