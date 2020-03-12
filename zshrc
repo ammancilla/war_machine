@@ -14,7 +14,9 @@ source $ZSH/oh-my-zsh.sh
 # User Configuration
 #
 # -- Exports
+export KUBE_PS1_SEPARATOR=""
 export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 export PATH=/urs/local/bin/vim:$PATH
 export WAR_MACHINE=/Users/apolonio/src/github.com/ammancilla/war_machine
 
@@ -28,5 +30,7 @@ alias xk='tmux kill-session -t ${PWD##*/}'
 alias xa='tmux attach -t ${PWD##*/}'
 alias gop='git-open'
 
-# Libs
+# -- Config
 eval $(thefuck --alias)
+eval "$(rbenv init -)"
+PROMPT=$PROMPT'$(kube_ps1) '
