@@ -21,14 +21,17 @@ export PATH=/urs/local/bin/vim:$PATH
 export WAR_MACHINE=/Users/apolonio/src/github.com/ammancilla/war_machine
 
 # -- Aliases
-alias zshload='source ~/.zshrc'
-alias zshconfig='vim ~/.zshrc'
-alias vimconfig='vim ~/.vimrc'
+alias kubeconfig='vim ~/.kube/config'
+alias sshconfig='vim ~/.ssh/config'
 alias tmuxconfig='vim ~/.tmux.conf'
-alias x='tmux new -s ${PWD##*/}'
-alias xk='tmux kill-session -t ${PWD##*/}'
-alias xa='tmux attach -t ${PWD##*/}'
+alias vimconfig='vim ~/.vimrc'
+alias zshconfig='vim ~/.zshrc'
+alias zshload='source ~/.zshrc'
 alias gop='git-open'
+alias x='tmux new -s ${PWD##*/}'
+alias xa='tmux attach -t ${PWD##*/}'
+alias xd='tmux detach -s ${PWD##*/}'
+alias xk='tmux kill-session -t ${PWD##*/}'
 
 # -- Config
 eval $(thefuck --alias)
