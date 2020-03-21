@@ -4,6 +4,14 @@
 " Looking for awesome plugins?
 " http://vimawesome.com/
 
+" Auto install plugins the first time
+" https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $HOME/.vimrc
+endif
+
 call plug#begin()
 
 " - Colorscheme
@@ -11,10 +19,6 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 
 " - Statusbar
 Plug 'vim-airline/vim-airline'
-
-" - Custom textobjects
-Plug 'kana/vim-textobj-user'
-Plug 'nelstrom/vim-textobj-rubyblock'
 
 " - Tmux
 Plug 'christoomey/vim-tmux-navigator'
@@ -36,19 +40,12 @@ Plug 'tpope/vim-rails'
 Plug 'nelstrom/vim-markdown-folding', { 'for': 'markdown' }
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 
-" - Go
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
 " - Others
 Plug 'AndrewRadev/switch.vim'
-Plug 'Valloric/YouCompleteMe'
 Plug 'Yggdroot/indentLine'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'easymotion/vim-easymotion'
 Plug 'elzr/vim-json'
-Plug 'jeetsukumaran/vim-buffergator'
 Plug 'jiangmiao/auto-pairs'
-Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'ryanoasis/vim-devicons'
