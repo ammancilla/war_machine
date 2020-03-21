@@ -12,11 +12,13 @@ VIMRC
 3. Compile/Install YCM before using the YouCompleteMe plugin · https://github.com/ycm-core/YouCompleteMe#macos · (./$HOME/.vim/plugged/YouCompleteMe./install.py)
 4. Install NerdFont · https://github.com/ryanoasis/nerd-fonts#font-installation · https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack
 5. Install vim-terraform plugin (not possible via Plugin manager) · https://github.com/hashivim/vim-terraform#installation
-6. Install git-open zsh plugin · https://github.com/paulirish/git-open#oh-my-zsh
 
 TMUX.CONF
 1. Install TPM · https://github.com/tmux-plugins/tpm#installation
 2. Install fzf (for extrakto plugin) · https://github.com/laktak/extrakto
 
-RANDOM
+ZSH
+- Install gh
+- Install rbenv
 - Install Dracula zsh theme · https://draculatheme.com/zsh/
+- Install git-open zsh plugin · https://github.com/paulirish/git-open#oh-my-zsh

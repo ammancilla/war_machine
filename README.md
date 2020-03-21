@@ -1,4 +1,4 @@
-# War Machine · 💻 ⌨️
+# War Machine · 💻
 This is the machine I use to hack and change the world using a keyboard.
 
 ## Components
@@ -23,11 +23,15 @@ This is the machine I use to hack and change the world using a keyboard.
 * [thefuck](https://github.com/nvbn/thefuck)
 
 ### Operations
+* man
 * ssh
+* less
 * curl
 * watch
 * [jq](https://github.com/stedolan/jq)
+* [fzf](https://github.com/junegunn/fzf)
 * [aws-cli](https://github.com/aws/aws-cli)
+* [kubectl](https://kubernetes.io/es/docs/tasks/tools/install-kubectl/#instalar-kubectl)
 * [git-open](https://github.com/paulirish/git-open)
 * [the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
 
