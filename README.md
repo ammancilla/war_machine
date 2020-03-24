@@ -11,6 +11,7 @@ This is the machine I use to hack and change the world using a keyboard.
 
 ### Programming Languages
 * Go
+  - Go version manager · [g](https://github.com/stefanmaric/g)
 * Ruby
   - Ruby version manager · [rbenv](https://github.com/rbenv/rbenv)
 * Terraform
