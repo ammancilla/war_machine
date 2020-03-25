@@ -30,11 +30,11 @@ This is the machine I use to hack and change the world using a keyboard.
 * watch
 * top • htop
 * [jq](https://github.com/stedolan/jq)
-* [iftop](https://code.blinkace.com/pdw/iftop)
 * [aws-cli](https://github.com/aws/aws-cli)
 * [thefuck](https://github.com/nvbn/thefuck)
 * [git-open](https://github.com/paulirish/git-open)
 * [the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
+* [iftop](https://code.blinkace.com/pdw/iftop) * [iptraf-ng](https://wiki.ipfire.org/addons/iptraf-ng) 
 
 ### Others
 * Alfred
