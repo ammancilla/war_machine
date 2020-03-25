@@ -24,8 +24,10 @@ This is the machine I use to hack and change the world using a keyboard.
 * [thefuck](https://github.com/nvbn/thefuck)
 
 ### Operations
+* du
 * ssh
 * curl
+* lsof
 * watch
 * [jq](https://github.com/stedolan/jq)
 * [aws-cli](https://github.com/aws/aws-cli)
