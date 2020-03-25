@@ -1,19 +1,19 @@
-# War Machine · 💻 ⌨️
+# War Machine • 💻
 This is the machine I use to hack and change the world using a keyboard.
 
 ## Components
 ### Core
-* Shell · zsh
-  - Configuration Manager · [Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzsh)
+* Shell • zsh
+  - Configuration Manager • [Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzsh)
 
-* Terminal ·  Terminal App (from Mac)
-  - Multiplexor · [Tmux](https://github.com/tmux/tmux/wiki)
+* Terminal • Terminal App (from Mac)
+  - Multiplexor • [Tmux](https://github.com/tmux/tmux/wiki)
 
 ### Programming Languages
 * Go
-  - Go version manager · [g](https://github.com/stefanmaric/g)
+  - Go version manager • [g](https://github.com/stefanmaric/g)
 * Ruby
-  - Ruby version manager · [rbenv](https://github.com/rbenv/rbenv)
+  - Ruby version manager • [rbenv](https://github.com/rbenv/rbenv)
 * Terraform
 
 ### Development
@@ -21,7 +21,6 @@ This is the machine I use to hack and change the world using a keyboard.
 * git
 * docker
 * [gh](https://github.com/jdxcode/gh)
-* [thefuck](https://github.com/nvbn/thefuck)
 
 ### Operations
 * du
@@ -29,8 +28,11 @@ This is the machine I use to hack and change the world using a keyboard.
 * curl
 * lsof
 * watch
+* top • htop
 * [jq](https://github.com/stedolan/jq)
+* [iftop](https://code.blinkace.com/pdw/iftop)
 * [aws-cli](https://github.com/aws/aws-cli)
+* [thefuck](https://github.com/nvbn/thefuck)
 * [git-open](https://github.com/paulirish/git-open)
 * [the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
 
