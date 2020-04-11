@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="dracula"
 
 # -- Plugins
-plugins=(git git-open gh kube-ps1)
+plugins=(git gh kube-ps1)
 
 # -- Initialize Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh
@@ -26,16 +26,18 @@ export WAR_MACHINE=/Users/apolonio/src/github.com/ammancilla/war_machine
 # -- Aliases
 alias gog="$GOPATH/bin/g";
 alias gop='git-open'
+
 alias kubeconfig='vim ~/.kube/config'
 alias sshconfig='vim ~/.ssh/config'
 alias tmuxconfig='vim ~/.tmux.conf'
 alias vimconfig='vim ~/.vimrc'
+alias zshconfig='vim ~/.zshrc'
+alias zshload='source ~/.zshrc'
+
 alias x='tmux new -s ${PWD##*/}'
 alias xa='tmux attach -t ${PWD##*/}'
 alias xd='tmux detach -s ${PWD##*/}'
 alias xk='tmux kill-session -t ${PWD##*/}'
-alias zshconfig='vim ~/.zshrc'
-alias zshload='source ~/.zshrc'
 
 # -- Config
 eval "$(rbenv init -)"
