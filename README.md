@@ -21,6 +21,8 @@ Essential apps, tools & configuration I use to change the world from the confort
 
 * [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack) - Font
 
+* [Dracula](https://draculatheme.com/) - Color Schema
+
 ### Programming Languages
 * Go
   - [g](https://github.com/stefanmaric/g)
