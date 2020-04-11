@@ -1,6 +1,10 @@
 # War Machine • 💻
 Essential apps, tools & configuration I use to change the world from the confort of my keyboard.
 
+## Install • MacOS
+
+`curl -sSL https://raw.githubusercontent.com/ammancilla/war_machine/master/bin/install.sh | sh -s`
+
 ## Components
 ### Core
 * **ZSH**  - Shell
