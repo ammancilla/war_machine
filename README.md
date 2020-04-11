@@ -11,6 +11,8 @@ This is the machine I use to hack and change the world using a keyboard.
 
 * [Homebrew](https://brew.shv) - Package Manager 
 
+* [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack) - Font
+
 ### Programming Languages
 * Go
   - [g](https://github.com/stefanmaric/g)
