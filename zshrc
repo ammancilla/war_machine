@@ -40,6 +40,9 @@ alias xd='tmux detach -s ${PWD##*/}'
 alias xk='tmux kill-session -t ${PWD##*/}'
 
 # -- Config
+compinit
+
 eval "$(rbenv init -)"
 eval $(thefuck --alias)
+
 PROMPT=$PROMPT'$(kube_ps1) ' # Must be kept at the end
