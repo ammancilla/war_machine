@@ -21,7 +21,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export PATH=$GOPATH/bin:$PATH
 export PATH=/urs/local/bin/vim:$PATH
-export WAR_MACHINE=/Users/apolonio/src/github.com/ammancilla/war_machine
+export WAR_MACHINE=$HOME/.war_machine
 
 # -- Aliases
 alias gog="$GOPATH/bin/g";
