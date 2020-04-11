@@ -2,8 +2,6 @@
 Essential apps, tools & configuration I use to change the world from the confort of my keyboard.
 
 ![](.support/war_machine.gif)
-![](.support/short.gif)
-![](war_machine_short.gif)
 
 ### Run with Docker
 
@@ -25,7 +23,7 @@ curl -sSL https://raw.githubusercontent.com/ammancilla/war_machine/master/bin/in
 
 * [Homebrew](https://brew.shv) - Package Manager 
 
-* [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack) - Font
+* [Hack](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack) - Font
 
 * [Dracula](https://draculatheme.com/) - Color Schema
 
