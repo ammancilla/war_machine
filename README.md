@@ -1,7 +1,9 @@
 # War Machine • 💻
 Essential apps, tools & configuration I use to change the world from the confort of my keyboard.
 
-[](.support/war_machine.gif)
+![](.support/war_machine.gif)
+![](.support/short.gif)
+![](war_machine_short.gif)
 
 ### Run with Docker
 
