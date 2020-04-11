@@ -1,5 +1,5 @@
 # War Machine • 💻
-This is the machine I use to hack and change the world using a keyboard.
+Essential apps, tools & configuration I use to change the world from the confort of my keyboard.
 
 ## Components
 ### Core
