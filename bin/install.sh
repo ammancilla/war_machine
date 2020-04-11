@@ -102,7 +102,6 @@ function dotfiles {
 		fi
 
 		ln -s $WAR_MACHINE/$FILE $DOTFILE
-
 	done
 }
 
