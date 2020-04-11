@@ -127,8 +127,6 @@ warMachine() {
 		brew tap homebrew/cask-fonts
 	 fi
 
-	# ---
-
 	#
 	# • CORE
 	#
@@ -147,8 +145,6 @@ warMachine() {
 	fi
 
 	installDraculaTheme
-
-	# ---
 
 	#
 	# • PROGRAMMING LANGUAGES
@@ -171,8 +167,6 @@ warMachine() {
 	else
 		echo "✅ • g (Go Version Manager)"
 	fi
-
-	# ---
 
 	#
 	# • DEVELOPMENT
@@ -203,23 +197,17 @@ warMachine() {
 		curl https://raw.githubusercontent.com/jdxcode/gh/master/zsh/gh/gh.plugin.zsh --output $GH/gh.plugin.zsh
 	fi
 
-	# ---
-
 	#
 	# • OPERATIONS
 	#
 
 	brewInstall man ssh less curl watch jq fzf awscli kubernetes-cli kubectx the_silver_searcher git-open top htop du lsof cmake
 
-	# ---
-
 	#
 	# • OTHERS
 	#
 
 	brewCaskInstall firefox alfred3 spotify rambox sublime-text keybase
-
-	# ---
 
 	#
 	# • DOTFILES
@@ -233,8 +221,6 @@ warMachine() {
 
 	echo "✅ • Dotfiles"
 
-	# ---
-
 	#
 	# • VIM PLUGINS
 	#
@@ -245,7 +231,10 @@ warMachine() {
 		git clone https://github.com/hashivim/vim-terraform.git $VIM_TERRAFORM
 	fi
 
-	# TODO: Install YouCompleteMe. Run  ~/.vim/plugged/YouCompleteMe/install.py
 }
 
 warMachine
+
+#
+# NOTE: To use YouCompleteMe, run ~/.vim/plugged/YouCompleteMe/install.py
+#
