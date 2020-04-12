@@ -96,8 +96,9 @@ function dotfiles {
 		local DOTFILE=$HOME/.$FILE
 
 		if [ -e $DOTFILE ]; then
-			rm -f $HOME/.$FILE.warmachine
-			mv $DOTFILE $HOME/.$FILE.warmachine
+			rm -f $DOTFILE.warmachine
+			cp $DOTFILE $DOTFILE.warmachine
+			rm $DOTFILE
 		fi
 
 		ln -s $WAR_MACHINE/$FILE $DOTFILE
