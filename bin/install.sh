@@ -140,10 +140,6 @@ warMachine() {
 		remoteScriptInstall https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
 	fi
 
-	if [ ! -d $HOME/.tmux/plugins/tpm ]; then
-		git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
-	fi
-
 	installDraculaTheme
 
 	#
@@ -242,9 +238,9 @@ warMachine() {
 warMachine
 
 #
-# POST INSTALL TODO
+# POST INSTALL
 #
-# 1. Terminal APP > Preferences: Import and set "Dracula" as default profile (from $HOME/src/github.com/dracula/terminal-app/Dracula.terminal)
-# 2. Terminal APP > Preferences: Select Dracula profile and change the font to "Hack Nerd Font"
-# 3. Terminal: Open VIM and let it install all the plugins
-# 4. Terminal: Run $HOME/.vim/plugged/YouCompleteMe/install.py to install YouCompleteMe
+
+echo "\n\n📝 POST INSTALL\n"
+echo "1. Import Dracula Profile: Terminal APP > Preferences > Profiles > ⚙ > Import (from $HOME/src/github.com/dracula/terminal-app/Dracula.terminal)"
+echo "2. Change Dracula Profile Font: Terminal APP > Preferences > Profiles > Dracula > Font Change... > 'Hack Nerd Font'"
