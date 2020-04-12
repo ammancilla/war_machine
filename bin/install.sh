@@ -85,7 +85,6 @@ function installDraculaTheme {
 	if [ -e $ZSH/themes/dracula.zsh-theme ]; then
 		echo "✅ • Dracula - ZSH"
 	else
-
 		git clone https://github.com/dracula/zsh.git $DRACULA_ZSH
 		ln -s $DRACULA_ZSH/dracula.zsh-theme $ZSH/themes/dracula.zsh-theme
 	fi
@@ -134,7 +133,7 @@ warMachine() {
 	brewInstall zsh tmux
 	brewCaskInstall font-hack-nerd-font
 
-	if [ $ZSH ]; then
+	if [ -d $ZSH ]; then
 		echo "✅ • Oh-My-Zsh"
 	else
 		remoteScriptInstall https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
@@ -190,11 +189,11 @@ warMachine() {
 	fi
 
 	if [ ! -e $GH/_gh ]; then
-		curl https://raw.githubusercontent.com/jdxcode/gh/master/zsh/gh/_gh --output $GH/_gh
+		curl -sSL https://raw.githubusercontent.com/jdxcode/gh/master/zsh/gh/_gh --output $GH/_gh
 	fi
 
 	if [ ! -e $GH/gh.plugin.zsh ]; then
-		curl https://raw.githubusercontent.com/jdxcode/gh/master/zsh/gh/gh.plugin.zsh --output $GH/gh.plugin.zsh
+		curl -sSL https://raw.githubusercontent.com/jdxcode/gh/master/zsh/gh/gh.plugin.zsh --output $GH/gh.plugin.zsh
 	fi
 
 	echo "✅ • gh"
@@ -242,5 +241,9 @@ warMachine() {
 warMachine
 
 #
-# NOTE: To use YouCompleteMe, run ~/.vim/plugged/YouCompleteMe/install.py
+# POST INSTALL TODO
 #
+# 1. Terminal APP > Preferences: Import and set "Dracula" as default profile (from $HOME/src/github.com/dracula/terminal-app/Dracula.terminal)
+# 2. Terminal APP > Preferences: Select Dracula profile and change the font to "Hack Nerd Font"
+# 3. Terminal: Open VIM and let it install all the plugins
+# 4. Terminal: Run $HOME/.vim/plugged/YouCompleteMe/install.py to install YouCompleteMe
