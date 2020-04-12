@@ -124,6 +124,7 @@ warMachine() {
 		remoteScriptInstall https://raw.githubusercontent.com/Homebrew/install/master/install.sh bash
 		brew tap homebrew/cask-versions
 		brew tap homebrew/cask-fonts
+		brew update
 	 fi
 
 	#
@@ -196,17 +197,19 @@ warMachine() {
 		curl https://raw.githubusercontent.com/jdxcode/gh/master/zsh/gh/gh.plugin.zsh --output $GH/gh.plugin.zsh
 	fi
 
+	echo "✅ • gh"
+
 	#
 	# • OPERATIONS
 	#
 
-	brewInstall man ssh less curl watch jq fzf awscli kubernetes-cli kubectx the_silver_searcher git-open top htop du lsof cmake
+	brewInstall man ssh less curl top du lsof watch jq fzf awscli kubernetes-cli kubectx the_silver_searcher git-open htop cmake
 
 	#
 	# • OTHERS
 	#
 
-	brewCaskInstall firefox alfred3 spotify rambox sublime-text keybase
+	brewCaskInstall 1password firefox alfred3 spotify rambox sublime-text keybase
 
 	#
 	# • DOTFILES
@@ -214,6 +217,10 @@ warMachine() {
 
 	if [ ! -d $WAR_MACHINE ]; then
 		git clone https://github.com/ammancilla/war_machine.git $WAR_MACHINE
+	fi
+
+	if [ ! -d $HOME/.ssh ]; then
+		mkdir $HOME/.ssh
 	fi
 
 	dotfiles vimrc zshrc tmux.conf ssh/config
