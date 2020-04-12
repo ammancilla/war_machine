@@ -40,8 +40,6 @@ alias xd='tmux detach -s ${PWD##*/}'
 alias xk='tmux kill-session -t ${PWD##*/}'
 
 # -- Config
-compinit
-
 eval "$(rbenv init -)"
 eval $(thefuck --alias)
 
