@@ -156,6 +156,7 @@ warMachine() {
 		echo "✅ • Ruby $RUBY_VERSION"
 	else
 		rbenv install $RUBY_VERSION
+		rbenv global $RUBY_VERSION
 	fi
 
 	if [ ! -e $GOPATH/bin/g ]; then
