@@ -3,10 +3,6 @@ Essential apps, tools & configuration I use to change the world from the comfort
 
 ![](.support/war_machine.gif)
 
-### Run with Docker
-
-[ COMING SOON ]
-
 ### Install • MacOS
 
 ```shell
@@ -61,6 +57,7 @@ curl -sSL https://raw.githubusercontent.com/ammancilla/war_machine/master/bin/in
 
 ### Others
 * [🦊](https://www.mozilla.org/firefox/new)
+* [Dash](https://kapeli.com/dash)
 * [Alfred](https://www.alfredapp.com)
 * [Rambox](https://rambox.pro/#home)
 * [Spotify](https://www.spotify.com)
