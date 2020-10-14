@@ -1,5 +1,5 @@
 # War Machine • 💻
-Essential apps, tools & configuration I use to change the world from the confort of my keyboard.
+Essential apps, tools & configuration I use to change the world from the comfort of my keyboard.
 
 ![](.support/war_machine.gif)
 
