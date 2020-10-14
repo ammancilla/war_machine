@@ -149,7 +149,7 @@ warMachine() {
 	brewInstall rbenv
 
 	if [ -z $RUBY_VERSION ]; then
-		RUBY_VERSION=$(rbenv install --list | grep -e ^\\d\.\\d\\{1\,2\\}\.\\d\\{1\,2\\}$ | tail -n 1)
+		RUBY_VERSION=$(rbenv install --list 2>/dev/null | grep -e ^\\d\.\\d\\{1\,2\\}\.\\d\\{1\,2\\}$ | tail -n 1)
 	fi
 
 	if [ -e $HOME/.rbenv/versions/$RUBY_VERSION ]; then
@@ -206,7 +206,7 @@ warMachine() {
 	# • OTHERS
 	#
 
-	brewCaskInstall 1password firefox alfred3 spotify rambox sublime-text keybase
+	brewCaskInstall 1password firefox alfred spotify rambox sublime-text keybase
 
 	#
 	# • DOTFILES
