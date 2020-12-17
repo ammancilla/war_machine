@@ -7,7 +7,7 @@ ZSH_THEME="dracula"
 # -- Plugins
 plugins=(git gh kube-ps1)
 
-# -- Initialize Oh-My-Zsh
+# -- Initialize
 source $ZSH/oh-my-zsh.sh
 
 #
@@ -24,8 +24,10 @@ export PATH=/urs/local/bin/vim:$PATH
 export WAR_MACHINE=$HOME/.war_machine
 
 # -- Aliases
+alias gfp='git push -f'
 alias gog="$GOPATH/bin/g";
 alias gop='git-open'
+alias grh='git reset --hard'
 
 alias kubeconfig='vim ~/.kube/config'
 alias sshconfig='vim ~/.ssh/config'
@@ -41,6 +43,11 @@ alias xk='tmux kill-session -t ${PWD##*/}'
 
 # -- Config
 eval "$(rbenv init -)"
+
 eval $(thefuck --alias)
 
-PROMPT=$PROMPT'$(kube_ps1) ' # Must be kept at the end
+kubeps1=$(brew list kube-ps1)
+if [ -e $kubeps1 ] ; then
+  source $kubeps1
+  PROMPT=$PROMPT'$(kube_ps1) '
+fi
