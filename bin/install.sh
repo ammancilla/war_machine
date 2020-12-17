@@ -53,7 +53,7 @@ function brewCaskInstall {
 		if [ $(which $app) ] || [ "$(brew cask ls $app 2>/dev/null)" ]; then
 			echo "✅ • $app"
 		else
-			brew cask install $app
+			brew install --cask $app
 		fi
 	done
 }
