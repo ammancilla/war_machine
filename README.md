@@ -46,12 +46,16 @@ curl -sSL https://raw.githubusercontent.com/ammancilla/war_machine/master/bin/in
 * lsof
 * curl
 * watch
+* kubens
+* kubectl
+* minikube
 * top • htop
 * [jq](https://github.com/stedolan/jq)
 * [fzf](https://github.com/junegunn/fzf)
 * [thefuck](https://github.com/nvbn/thefuck)
 * [aws-cli](https://github.com/aws/aws-cli)
 * [git-open](https://github.com/paulirish/git-open)
+* [kube-ps1]((https://github.com/jonmosco/kube-ps1)
 * [iftop](https://code.blinkace.com/pdw/iftop) • [iptraf-ng](https://wiki.ipfire.org/addons/iptraf-ng) 
 * [the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
 
