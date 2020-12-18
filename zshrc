@@ -41,6 +41,11 @@ alias xa='tmux attach -t ${PWD##*/}'
 alias xd='tmux detach -s ${PWD##*/}'
 alias xk='tmux kill-session -t ${PWD##*/}'
 
+alias k='kubectl'
+alias ka='kubectl apply -f'
+alias kg='kubectl get'
+alias kd='kubectl describe'
+
 # -- Config
 eval "$(rbenv init -)"
 
