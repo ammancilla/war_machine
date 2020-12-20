@@ -45,6 +45,7 @@ alias k='kubectl'
 alias ka='kubectl apply -f'
 alias kg='kubectl get'
 alias kd='kubectl describe'
+alias kex='kubectl exec -ti'
 
 # -- Config
 eval "$(rbenv init -)"
