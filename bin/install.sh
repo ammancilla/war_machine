@@ -39,7 +39,7 @@ function systemCheck {
 function brewInstall {
 	for formula in $@
 	do
-		if [ $(which $formula) ] || [ "$(brew ls $formula 2>/dev/null)" ]; then
+		if [ $(which $formula) ] || [ "$(brew ls $formula &2>/dev/null)" ]; then
 			echo "✅ • $formula"
 		else
 			brew install $formula
@@ -50,7 +50,7 @@ function brewInstall {
 function brewCaskInstall {
 	for app in $@
 	do
-		if [ $(which $app) ] || [ "$(brew cask ls $app 2>/dev/null)" ]; then
+		if [ $(which $app) ] || [ "$(brew list --cask $app &2>/dev/null)" ]; then
 			echo "✅ • $app"
 		else
 			brew install --cask $app
@@ -149,7 +149,7 @@ warMachine() {
 	brewInstall rbenv
 
 	if [ -z $RUBY_VERSION ]; then
-		RUBY_VERSION=$(rbenv install --list 2>/dev/null | grep -e ^\\d\.\\d\\{1\,2\\}\.\\d\\{1\,2\\}$ | tail -n 1)
+		RUBY_VERSION=$(rbenv install --list &2>/dev/null | grep -e ^\\d\.\\d\\{1\,2\\}\.\\d\\{1\,2\\}$ | tail -n 1)
 	fi
 
 	if [ -e $HOME/.rbenv/versions/$RUBY_VERSION ]; then
