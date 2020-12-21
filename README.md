@@ -49,6 +49,7 @@ curl -sSL https://raw.githubusercontent.com/ammancilla/war_machine/master/bin/in
 * kubens
 * kubectl
 * minikube
+* git-crypt
 * top • htop
 * [jq](https://github.com/stedolan/jq)
 * [fzf](https://github.com/junegunn/fzf)
