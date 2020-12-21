@@ -42,6 +42,7 @@ curl -sSL https://raw.githubusercontent.com/ammancilla/war_machine/master/bin/in
 * du
 * ssh
 * man
+* gpg
 * less
 * lsof
 * curl
