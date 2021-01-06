@@ -52,8 +52,7 @@ eval "$(rbenv init -)"
 
 eval $(thefuck --alias)
 
-kubeps1=$(brew list kube-ps1)
-if [ -e $kubeps1 ] ; then
-  source $kubeps1
+kubeps1=$(which kube_ps1)
+if [ $? -eq 0 ] ; then
   PROMPT=$PROMPT'$(kube_ps1) '
 fi

@@ -200,7 +200,7 @@ warMachine() {
 	# • OPERATIONS
 	#
 
-	brewInstall man ssh less curl top du lsof watch jq fzf awscli kubernetes-cli the_silver_searcher git-open htop cmake kubectl kubectx kube-ps1 stern git-crypt gpg
+	brewInstall man ssh less curl top du lsof watch jq fzf awscli kubernetes-cli the_silver_searcher git-open htop cmake kubectl kubectx stern git-crypt gpg
 
 	#
 	# • OTHERS
