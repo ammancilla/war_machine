@@ -50,7 +50,7 @@ function brewInstall {
 function brewCaskInstall {
 	for app in $@
 	do
-		if [ $(which $app) ] || [ "$(brew list --cask $app &2>/dev/null)" ]; then
+		if [ $(which $app) ] || [ "$(brew list --cask $app &>/dev/null)" ] || [ "$(ls /Applications/ | grep -i $app)" ]; then
 			echo "✅ • $app"
 		else
 			brew install --cask $app
@@ -122,10 +122,17 @@ warMachine() {
 		echo "✅ • Howbrew"
 	else
 		remoteScriptInstall https://raw.githubusercontent.com/Homebrew/install/master/install.sh bash
+	fi
+
+	if !(brew tap | grep cask-versions &>/dev/null); then
 		brew tap homebrew/cask-versions
+	fi
+
+	if !(brew tap | grep cask-fonts &>/dev/null); then
 		brew tap homebrew/cask-fonts
-		brew update
-	 fi
+	fi
+
+	brew update &>/dev/null
 
 	#
 	# • CORE
@@ -148,13 +155,14 @@ warMachine() {
 
 	brewInstall rbenv
 
-	if [ -z $RUBY_VERSION ]; then
-		RUBY_VERSION=$(rbenv install --list &2>/dev/null | grep -e ^\\d\.\\d\\{1\,2\\}\.\\d\\{1\,2\\}$ | tail -n 1)
+	if [ -z "$RUBY_VERSION" ]; then
+		RUBY_VERSION=$(rbenv install -L | grep -e ^\\d\.\\d\\{1\,2\\}\.\\d\\{1\,2\\}$ | tail -n 1)
 	fi
 
 	if [ -e $HOME/.rbenv/versions/$RUBY_VERSION ]; then
 		echo "✅ • Ruby $RUBY_VERSION"
 	else
+		echo "⏳ Installing ruby $RUBY_VERSION..."
 		rbenv install $RUBY_VERSION
 		rbenv global $RUBY_VERSION
 	fi
