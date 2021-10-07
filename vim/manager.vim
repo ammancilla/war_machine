@@ -34,6 +34,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " - Git
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive-gitlab'
 Plug 'tpope/vim-rhubarb'
 
 " - Ruby (& Rails)
@@ -47,10 +48,15 @@ Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 " - Go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
+" - Elixir
+Plug 'elixir-editors/vim-elixir'
+Plug 'mhinz/vim-mix-format'
+
 " - Others
 Plug 'AndrewRadev/switch.vim'
 Plug 'Valloric/YouCompleteMe'
 Plug 'Yggdroot/indentLine'
+Plug 'codota/tabnine-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'elzr/vim-json'

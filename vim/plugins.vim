@@ -64,3 +64,8 @@ let g:terraform_fmt_on_save = 1
 "  - Go
 let g:go_version_warning = 0
 " -------
+"
+
+"  - Elixir
+let g:mix_format_on_save = 1
+" -------

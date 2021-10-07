@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="dracula"
 
 # -- Plugins
-plugins=(git gh kube-ps1)
+plugins=(git gh kube-ps1 asdf)
 
 # -- Initialize
 source $ZSH/oh-my-zsh.sh
@@ -56,3 +56,13 @@ kubeps1=$(which kube_ps1)
 if [ $? -eq 0 ] ; then
   PROMPT=$PROMPT'$(kube_ps1) '
 fi
+
+fgco() {
+  local branches branch
+	branches=$(git branch -vv) &&
+	branch=$(echo "$branches" | fzf +m --query="$1") &&
+    git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
+
+export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
+alias ggo="$GOPATH/bin/g"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
