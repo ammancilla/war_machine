@@ -1,5 +1,5 @@
 # War Machine • 💻
-Essential apps, tools & configuration I use to change the world from the comfort of my keyboard.
+Essential apps, tools & configuration I use to change the world from my keyboard.
 
 ![](.support/war_machine.gif)
 
@@ -11,45 +11,47 @@ curl -sSL https://raw.githubusercontent.com/ammancilla/war_machine/master/bin/in
 
 ## Components
 ### Core
-* **ZSH**  - Shell
+
+* Font • [Hack](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)
+
+* Shell • **ZSH**
   - [Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzsh)
 
-* **OS Terminal App** - Terminal
+* Terminal • **OS Terminal App** 
   - [Tmux](https://github.com/tmux/tmux/wiki)
 
-* [Homebrew](https://brew.shv) - Package Manager 
+* Color Schema • [Dracula](https://draculatheme.com/)
 
-* [Hack](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack) - Font
-
-* [Dracula](https://draculatheme.com/) - Color Schema
+* Package Manager • [Homebrew](https://brew.shv)
 
 ### Programming Languages
-* Go
-  - [g](https://github.com/stefanmaric/g)
 
-* Ruby
-  - [rbenv](https://github.com/rbenv/rbenv)
+* [Ruby](https://www.ruby-lang.org/en/)
 
-* Terraform
+* [Elixir](https://elixir-lang.org/)
 
-### Development
+* [Terraform](https://www.terraform.io/language)
+
+### Software Development
 * [gh](https://github.com/jdxcode/gh)
 * git
-* vim
+* gim
+* [asdf](https://github.com/asdf-vm/asdf)
 * docker
+* kubernetes
 
 ### Operations
 * du
-* ssh
-* man
 * gpg
+* man
+* ssh
+* curl
 * less
 * lsof
-* curl
 * watch
 * kubens
 * kubectl
-* minikube
+* kubectx
 * git-crypt
 * top • htop
 * [jq](https://github.com/stedolan/jq)
@@ -65,9 +67,10 @@ curl -sSL https://raw.githubusercontent.com/ammancilla/war_machine/master/bin/in
 ### Others
 * [🦊](https://www.mozilla.org/firefox/new)
 * [Dash](https://kapeli.com/dash)
+* [Flow](https://apps.apple.com/app/flow-focus-and-work-timer/id1423210932) • Pomodoro 
 * [Alfred](https://www.alfredapp.com)
 * [Rambox](https://rambox.pro/#home)
 * [Spotify](https://www.spotify.com)
 * [Keybase](https://keybase.io/download)
+* [1Password](https://1password.com)
 * [Sublime Text](https://www.sublimetext.com)
-* [Flow](https://apps.apple.com/app/flow-focus-and-work-timer/id1423210932) • Focus and Work Timer 

@@ -48,7 +48,7 @@ alias kex='kubectl exec -ti'
 #
 # Helper functions
 #
-source ./helpers/*
+source $WAR_MACHINE/helpers/fgco.sh
 
 #
 # Apps configuration
