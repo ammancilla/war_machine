@@ -5,36 +5,34 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="dracula"
 
 # -- Plugins
-plugins=(git gh kube-ps1)
+plugins=(git kube-ps1)
 
 # -- Initialize
 source $ZSH/oh-my-zsh.sh
 
 #
-# User Configuration
+# User configuration
 #
+
 # -- Exports
-export GOPATH=$HOME/go
-export GOROOT=$HOME/.go
-export KUBE_PS1_SEPARATOR=""
 export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-export PATH=$GOPATH/bin:$PATH
 export PATH=/urs/local/bin/vim:$PATH
+export LC_ALL=en_US.UTF-8
 export WAR_MACHINE=$HOME/.war_machine
+export KUBE_PS1_SEPARATOR=""
 
 # -- Aliases
 alias gfp='git push -f'
-alias gog="$GOPATH/bin/g";
 alias gop='git-open'
 alias grh='git reset --hard'
 
-alias kubeconfig='vim ~/.kube/config'
-alias sshconfig='vim ~/.ssh/config'
-alias tmuxconfig='vim ~/.tmux.conf'
-alias vimconfig='vim ~/.vimrc'
-alias zshconfig='vim ~/.zshrc'
 alias zshload='source ~/.zshrc'
+alias zshconfig='vim ~/.zshrc'
+alias vimconfig='vim ~/.vimrc'
+alias gitconfig='vim ~/.gitconfig'
+alias sshconfig='vim ~/.ssh/config'
+alias kubeconfig='vim ~/.kube/config'
+alias tmuxconfig='vim ~/.tmux.conf'
 
 alias x='tmux new -s ${PWD##*/}'
 alias xa='tmux attach -t ${PWD##*/}'
@@ -47,9 +45,14 @@ alias kg='kubectl get'
 alias kd='kubectl describe'
 alias kex='kubectl exec -ti'
 
-# -- Config
-eval "$(rbenv init -)"
+#
+# Helper functions
+#
+source ./helpers/*
 
+#
+# Apps configuration
+#
 eval $(thefuck --alias)
 
 kubeps1=$(which kube_ps1)
