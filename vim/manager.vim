@@ -36,7 +36,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 
-" - Ruby (& Rails)
+" - Ruby
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
 
@@ -44,8 +44,12 @@ Plug 'tpope/vim-rails'
 Plug 'nelstrom/vim-markdown-folding', { 'for': 'markdown' }
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 
-" - Go
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" - Elixir
+Plug 'elixir-editors/vim-elixir'
+Plug 'mhinz/vim-mix-format'
+
+" - Terraform
+Plug 'hashivim/vim-terraform'
 
 " - Others
 Plug 'AndrewRadev/switch.vim'

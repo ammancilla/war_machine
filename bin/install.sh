@@ -14,9 +14,9 @@ if [ $VERBOSE ]; then
 	set -v
 fi
 
+export ZSH=$HOME/.oh-my-zsh
 export CHSH=no
 export RUNZSH=no
-export ZSH=$HOME/.oh-my-zsh
 export WAR_MACHINE=$HOME/.war_machine
 
 #
@@ -150,30 +150,6 @@ warMachine() {
 	installDraculaTheme
 
 	#
-	# • PROGRAMMING LANGUAGES
-	#
-
-	brewInstall rbenv
-
-	if [ -z "$RUBY_VERSION" ]; then
-		RUBY_VERSION=$(rbenv install -L | grep -e ^\\d\.\\d\\{1\,2\\}\.\\d\\{1\,2\\}$ | tail -n 1)
-	fi
-
-	if [ -e $HOME/.rbenv/versions/$RUBY_VERSION ]; then
-		echo "✅ • Ruby $RUBY_VERSION"
-	else
-		echo "⏳ Installing ruby $RUBY_VERSION..."
-		rbenv install $RUBY_VERSION
-		rbenv global $RUBY_VERSION
-	fi
-
-	if [ ! -e $GOPATH/bin/g ]; then
-		remoteScriptInstall https://raw.githubusercontent.com/stefanmaric/g/master/bin/install
-	else
-		echo "✅ • g (Go Version Manager)"
-	fi
-
-	#
 	# • DEVELOPMENT
 	#
 
@@ -208,7 +184,7 @@ warMachine() {
 	# • OPERATIONS
 	#
 
-	brewInstall man ssh less curl top du lsof watch jq fzf awscli kubernetes-cli the_silver_searcher git-open htop cmake kubectl kubectx stern git-crypt gpg
+	brewInstall man ssh less curl top du lsof watch jq fzf awscli the_silver_searcher git-open htop cmake kubectl kubectx stern git-crypt gpg
 
 	#
 	# • OTHERS
@@ -228,20 +204,25 @@ warMachine() {
 		mkdir $HOME/.ssh
 	fi
 
-	dotfiles vimrc zshrc tmux.conf ssh/config
+	dotfiles vimrc zshrc tmux.conf ssh/config gitconfig git/gitignore tool-versions
 
 	echo "✅ • Dotfiles"
 
 	#
-	# • VIM PLUGINS
+	# • PROGRAMMING LANGUAGES
 	#
 
-	VIM_TERRAFORM=$HOME/.vim/pack/plugins/start/vim-terraform
+	brewInstall asdf &
 
-	if [ ! -d $VIM_TERRAFORM ]; then
-		git clone https://github.com/hashivim/vim-terraform.git $VIM_TERRAFORM
-	fi
+	wait $!
 
+	asdf plugin add ruby
+	asdf plugin add elixir
+	asdf plugin add erlang
+	asdf plugin add nodejs
+	asdf plugin add terraform
+
+	asdf install
 }
 
 warMachine

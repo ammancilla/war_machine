@@ -1,4 +1,4 @@
-" - Plugin Manager
+" - Plugin manager
 source $WAR_MACHINE/vim/manager.vim
 
 " - Plugins configuration
@@ -7,5 +7,5 @@ source $WAR_MACHINE/vim/plugins.vim
 " - Configuration
 source $WAR_MACHINE/vim/configuration.vim
 
-" - Custom Mappings
+" - Custom mappings
 source $WAR_MACHINE/vim/mappings.vim
