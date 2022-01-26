@@ -198,13 +198,19 @@ warMachine() {
 
 	if [ ! -d $WAR_MACHINE ]; then
 		git clone https://github.com/ammancilla/war_machine.git $WAR_MACHINE
+	else
+		echo "\nWould you like to update War Machine? [Y/n] "; read answer
+
+		if [ answer == "Y" ]; then
+			cd $WAR_MACHINE && git checkout master && git pull origin/master --rebase
+		fi
 	fi
 
 	if [ ! -d $HOME/.ssh ]; then
 		mkdir $HOME/.ssh
 	fi
 
-	dotfiles vimrc zshrc tmux.conf ssh/config gitconfig git/gitignore tool-versions
+	dotfiles vimrc zshrc tmux.conf ssh/config gitconfig gitignore tool-versions
 
 	echo "✅ • Dotfiles"
 
