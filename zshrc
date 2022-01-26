@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="dracula"
 
 # -- Plugins
-plugins=(git kube-ps1)
+plugins=(git kube-ps1 gh)
 
 # -- Initialize
 source $ZSH/oh-my-zsh.sh
