@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="dracula"
 
 # -- Plugins
-plugins=(git kube-ps1 gh)
+plugins=(git kube-ps1 gh asdf)
 
 # -- Initialize
 source $ZSH/oh-my-zsh.sh
@@ -16,7 +16,6 @@ source $ZSH/oh-my-zsh.sh
 
 # -- Exports
 export LANG=en_US.UTF-8
-export PATH=/urs/local/bin/vim:$PATH
 export LC_ALL=en_US.UTF-8
 export WAR_MACHINE=$HOME/.war_machine
 export KUBE_PS1_SEPARATOR=""
