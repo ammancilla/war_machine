@@ -1,5 +1,5 @@
 # War Machine • 💻
-Apps, tools & configuration I use to change the world from my keyboard.
+Apps, tools & configuration I use to make the world a better place, from my keyboard.
 
 ![](.support/war_machine.gif)
 
