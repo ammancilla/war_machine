@@ -5,7 +5,6 @@
 #
 # • CONFIG
 #
-
 if [ $DEBUG ]; then
 	set -xeE
 fi
@@ -91,33 +90,37 @@ function installDraculaTheme {
 }
 
 function dotfiles {
+	local answer
+
 	for FILE in $@
 	do
 		local DOTFILE=$HOME/.$FILE
 
 		if [ -e $DOTFILE ]; then
-			rm -f $DOTFILE.warmachine
-			cp $DOTFILE $DOTFILE.warmachine
-			rm $DOTFILE
+
+			echo "\nDotfile $FILE exists, would you like to overwrite it? [Y/n] "; read answer
+
+			if [ answer == "Y" ]; then
+				rm -f $DOTFILE.warmachine
+				cp $DOTFILE $DOTFILE.warmachine
+				rm $DOTFILE
+			fi
+
 		fi
 
 		ln -s $WAR_MACHINE/$FILE $DOTFILE
 	done
 }
 
-# ---
-
 #
 # • MAIN
 #
-
 warMachine() {
 	systemCheck
 
 	#
 	# • HOMEBREW
 	#
-
 	if [ $(which brew) ]; then
 		echo "✅ • Howbrew"
 	else
@@ -137,7 +140,6 @@ warMachine() {
 	#
 	# • CORE
 	#
-
 	brewInstall zsh tmux
 	brewCaskInstall font-hack-nerd-font
 
@@ -150,20 +152,12 @@ warMachine() {
 	installDraculaTheme
 
 	#
-	# • DEVELOPMENT
+	# • SOFTWARE DEVELOPMENT
 	#
-
-	brewInstall git thefuck
+	brewInstall vim git
 	brewCaskInstall docker
 
-	if [ "$(brew ls vim 2>/dev/null)" ]; then
-		echo "✅ • vim"
-	else
-		brew install vim
-	fi
-
 	# - gh
-
 	GH=$ZSH/plugins/gh
 
 	if [ ! -d $GH ]; then
@@ -183,19 +177,22 @@ warMachine() {
 	#
 	# • OPERATIONS
 	#
+	brewInstall kind thefuck man ssh curl top du lsof watch jq fzf awscli the_silver_searcher git-open htop cmake kubectl kubectx stern git-crypt gpg datawire/blackbird/telepresence
+	brewCaskInstall lens
 
-	brewInstall man ssh less curl top du lsof watch jq fzf awscli the_silver_searcher git-open htop cmake kubectl kubectx stern git-crypt gpg
+	#
+	# • DIAGRAMS
+	#
+	brewCaskInstall drawio ithoughtsx
 
 	#
 	# • OTHERS
 	#
-
-	brewCaskInstall 1password firefox alfred spotify rambox sublime-text keybase
+	brewCaskInstall 1password firefox alfred spotify rambox
 
 	#
 	# • DOTFILES
 	#
-
 	if [ ! -d $WAR_MACHINE ]; then
 		git clone https://github.com/ammancilla/war_machine.git $WAR_MACHINE
 	else
@@ -217,7 +214,6 @@ warMachine() {
 	#
 	# • PROGRAMMING LANGUAGES
 	#
-
 	brewInstall asdf &
 
 	wait $!
@@ -236,7 +232,6 @@ warMachine
 #
 # POST INSTALL
 #
-
 echo "\n\n📝 POST INSTALL\n"
 echo "1. Import Dracula Profile: Terminal APP > Preferences > Profiles > ⚙ > Import (from $HOME/src/github.com/dracula/terminal-app/Dracula.terminal)"
 echo "2. Change Dracula Profile Font: Terminal APP > Preferences > Profiles > Dracula > Font Change... > 'Hack Nerd Font'"

@@ -1,76 +1,80 @@
 # War Machine • 💻
-Essential apps, tools & configuration I use to change the world from my keyboard.
+Apps, tools & configuration I use to change the world from my keyboard.
 
 ![](.support/war_machine.gif)
 
 ### Install • MacOS
-
 ```shell
 curl -sSL https://raw.githubusercontent.com/ammancilla/war_machine/master/bin/install.sh | sh -s
 ```
 
 ## Components
 ### Core
-
-* Font • [Hack](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)
-
-* Shell • **ZSH**
+* Font • [**Hack**](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)
+* Shell • [**ZSH**](https://zsh.sourceforge.io/)
   - [Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzsh)
-
-* Terminal • **OS Terminal App** 
+* Terminal • [**MacOS Terminal App**](https://en.wikipedia.org/wiki/Terminal_(macOS))
   - [Tmux](https://github.com/tmux/tmux/wiki)
-
-* Color Schema • [Dracula](https://draculatheme.com/)
-
-* Package Manager • [Homebrew](https://brew.shv)
+* Color Schema • [**Dracula**](https://draculatheme.com/)
+* Package Manager • [**Homebrew**](https://brew.shv)
 
 ### Programming Languages
-
 * [Ruby](https://www.ruby-lang.org/en/)
-
 * [Elixir](https://elixir-lang.org/)
-
 * [Terraform](https://www.terraform.io/language)
 
 ### Software Development
 * [gh](https://github.com/jdxcode/gh)
-* git
-* gim
+* [git](https://git-scm.com/)
+* [vim](https://www.vim.org/)
+  - [vim-plug](https://github.com/junegunn/vim-plug)
 * [asdf](https://github.com/asdf-vm/asdf)
-* docker
-* kubernetes
+* [Docker](https://www.docker.com/)
+  - [Docker Compose](https://docs.docker.com/compose/)
+* [Kubernetes](https://kubernetes.io/)
+  - [Lens](https://k8slens.dev/)
+  - [kind](https://kind.sigs.k8s.io/)
+  - [stern](https://github.com/wercker/stern)
+  - [kubectl](https://kubectl.docs.kubernetes.io/)
+  - [kubectx](https://github.com/ahmetb/kubectx)
+  - [kube-ps1](https://github.com/jonmosco/kube-ps1)
+  - [Kustomize](https://kustomize.io/)
+  - [Telepresence](https://www.telepresence.io/)
+* [Shell Scripting](https://tldp.org/LDP/abs/html/index.html)
 
 ### Operations
 * du
+* [jq](https://github.com/stedolan/jq)
+* [awk](https://en.wikipedia.org/wiki/AWK)
+* [fzf](https://github.com/junegunn/fzf)
 * gpg
-* man
+* [man](https://man7.org/linux/man-pages/man1/man.1.html)
+* [sed](https://www.gnu.org/software/sed/manual/sed.html)
 * ssh
 * curl
-* less
+* htop
 * lsof
+* [make](https://www.gnu.org/software/make/)
 * watch
-* kubens
-* kubectl
-* kubectx
-* git-crypt
-* top • htop
-* [jq](https://github.com/stedolan/jq)
-* [fzf](https://github.com/junegunn/fzf)
-* [stern](https://github.com/wercker/stern)
+* [iftop](https://code.blinkace.com/pdw/iftop)
 * [thefuck](https://github.com/nvbn/thefuck)
 * [aws-cli](https://github.com/aws/aws-cli)
 * [git-open](https://github.com/paulirish/git-open)
-* [kube-ps1](https://github.com/jonmosco/kube-ps1)
-* [iftop](https://code.blinkace.com/pdw/iftop) • [iptraf-ng](https://wiki.ipfire.org/addons/iptraf-ng) 
+* [git-crypt](https://github.com/AGWA/git-crypt)
+* [iptraf-ng](https://wiki.ipfire.org/addons/iptraf-ng)
+* [shellcheck](https://github.com/koalaman/shellcheck)
 * [the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
 
+### Diagrams
+* [Drawio](https://github.com/jgraph/drawio-desktop) • General Purpose Driagrams
+* [PlantUML](https://plantuml.com) • General Purpose Driagrams
+* [iThoughtX](https://www.toketaware.com/ithoughts-osx) • Mindmapping
+
 ### Others
-* [🦊](https://www.mozilla.org/firefox/new)
-* [Dash](https://kapeli.com/dash)
-* [Flow](https://apps.apple.com/app/flow-focus-and-work-timer/id1423210932) • Pomodoro 
-* [Alfred](https://www.alfredapp.com)
-* [Rambox](https://rambox.pro/#home)
-* [Spotify](https://www.spotify.com)
-* [Keybase](https://keybase.io/download)
-* [1Password](https://1password.com)
-* [Sublime Text](https://www.sublimetext.com)
+* [🦊](https://www.mozilla.org/firefox/new) • Web Browser
+* [Dash](https://kapeli.com/dash) • Documentation
+* [Flow](https://apps.apple.com/app/flow-focus-and-work-timer/id1423210932) • Pomodoro
+* [Alfred](https://www.alfredapp.com) • Productivity
+* [Rambox](https://rambox.pro/#home) • Social Networks
+* [Spotify](https://www.spotify.com) • Music
+* [1Password](https://1password.com) • Password Manager
