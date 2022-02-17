@@ -181,7 +181,7 @@ warMachine() {
 	#
 	# • OPERATIONS
 	#
-	brewInstall kind thefuck man ssh curl top du lsof watch jq fzf awscli the_silver_searcher git-open htop cmake kubectl kubectx stern git-crypt gpg datawire/blackbird/telepresence
+	brewInstall fd kind thefuck man ssh curl top du lsof watch jq fzf awscli the_silver_searcher git-open htop cmake kubectl kubectx stern git-crypt gpg datawire/blackbird/telepresence
 	brewCaskInstall lens
 
 	#

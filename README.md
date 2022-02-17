@@ -43,6 +43,7 @@ curl -sSL https://raw.githubusercontent.com/ammancilla/war_machine/master/bin/in
 * [Shell Scripting](https://tldp.org/LDP/abs/html/index.html)
 
 ### Operations
+* [fd](https://github.com/sharkdp/fd)
 * du
 * [jq](https://github.com/stedolan/jq)
 * [awk](https://en.wikipedia.org/wiki/AWK)
