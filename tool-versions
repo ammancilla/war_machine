@@ -1,5 +1,6 @@
 ruby 3.1.0
-erlang 24.2
 elixir 1.13.2
+erlang 24.2
 nodejs 17.3.0
+postgres 14.2
 terraform 1.1.3
