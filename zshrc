@@ -30,6 +30,7 @@ alias zshconfig='vim ~/.zshrc'
 alias vimconfig='vim ~/.vimrc'
 alias gitconfig='vim ~/.gitconfig'
 alias sshconfig='vim ~/.ssh/config'
+alias asdfconfig='vim ~/.tool-versions'
 alias kubeconfig='vim ~/.kube/config'
 alias tmuxconfig='vim ~/.tmux.conf'
 
