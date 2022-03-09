@@ -43,18 +43,17 @@ curl -sSL https://raw.githubusercontent.com/ammancilla/war_machine/master/bin/in
 * [Shell Scripting](https://tldp.org/LDP/abs/html/index.html)
 
 ### Operations
-* [fd](https://github.com/sharkdp/fd)
 * du
+* [fd](https://github.com/sharkdp/fd)
 * [jq](https://github.com/stedolan/jq)
-* [awk](https://en.wikipedia.org/wiki/AWK)
 * [fzf](https://github.com/junegunn/fzf)
-* gpg
+* [awk](https://en.wikipedia.org/wiki/AWK)
 * [man](https://man7.org/linux/man-pages/man1/man.1.html)
 * [sed](https://www.gnu.org/software/sed/manual/sed.html)
 * ssh
+* lsof
 * curl
 * htop
-* lsof
 * [make](https://www.gnu.org/software/make/)
 * watch
 * [iftop](https://code.blinkace.com/pdw/iftop)
@@ -73,6 +72,7 @@ curl -sSL https://raw.githubusercontent.com/ammancilla/war_machine/master/bin/in
 
 ### Others
 * [🦊](https://www.mozilla.org/firefox/new) • Web Browser
+* [Kap](https://getkap.co/) • Screen Capture
 * [Dash](https://kapeli.com/dash) • Documentation
 * [Flow](https://apps.apple.com/app/flow-focus-and-work-timer/id1423210932) • Pomodoro
 * [Alfred](https://www.alfredapp.com) • Productivity
