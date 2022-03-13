@@ -226,6 +226,7 @@ warMachine() {
 	asdf plugin add elixir &>/dev/null
 	asdf plugin add erlang &>/dev/null
 	asdf plugin add nodejs &>/dev/null
+	asdf plugin add postgres &>/dev/null
 	asdf plugin add terraform &>/dev/null
 
 	asdf install
