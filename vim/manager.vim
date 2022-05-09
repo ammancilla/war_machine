@@ -33,6 +33,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " - Git
 Plug 'airblade/vim-gitgutter'
+Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 
