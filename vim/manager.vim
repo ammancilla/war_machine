@@ -20,10 +20,6 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 " - Statusbar
 Plug 'vim-airline/vim-airline'
 
-" - Custom textobjects
-Plug 'kana/vim-textobj-user'
-Plug 'nelstrom/vim-textobj-rubyblock'
-
 " - Tmux
 Plug 'christoomey/vim-tmux-navigator'
 
@@ -42,7 +38,6 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
 
 " - Markdown
-Plug 'nelstrom/vim-markdown-folding', { 'for': 'markdown' }
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 
 " - Elixir

@@ -45,6 +45,8 @@ alias kg='kubectl get'
 alias kd='kubectl describe'
 alias kex='kubectl exec -ti'
 
+alias bx='bundle exec'
+
 #
 # Helper functions
 #
