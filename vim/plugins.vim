@@ -42,6 +42,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+cnoreabbrev Ack Ack!
 " -------
 
 " - Ctrl - p
@@ -63,4 +65,8 @@ let g:terraform_fmt_on_save = 1
 
 " - Elixir
 let g:mix_format_on_save = 1
+" -------
+
+" - Markdown
+let g:markdown_folding = 1
 " -------

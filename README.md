@@ -46,6 +46,7 @@ curl -sSL https://raw.githubusercontent.com/ammancilla/war_machine/master/bin/in
 * du
 * [fd](https://github.com/sharkdp/fd)
 * [jq](https://github.com/stedolan/jq)
+* [bat](https://github.com/sharkdp/bat)
 * [fzf](https://github.com/junegunn/fzf)
 * [awk](https://en.wikipedia.org/wiki/AWK)
 * [man](https://man7.org/linux/man-pages/man1/man.1.html)
@@ -57,6 +58,7 @@ curl -sSL https://raw.githubusercontent.com/ammancilla/war_machine/master/bin/in
 * [make](https://www.gnu.org/software/make/)
 * watch
 * [iftop](https://code.blinkace.com/pdw/iftop)
+* [insomia](https://github.com/Kong/insomnia)
 * [thefuck](https://github.com/nvbn/thefuck)
 * [aws-cli](https://github.com/aws/aws-cli)
 * [git-open](https://github.com/paulirish/git-open)
@@ -66,9 +68,10 @@ curl -sSL https://raw.githubusercontent.com/ammancilla/war_machine/master/bin/in
 * [the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
 
 ### Diagrams
-* [Drawio](https://github.com/jgraph/drawio-desktop) • General Purpose Driagrams
-* [PlantUML](https://plantuml.com) • General Purpose Driagrams
+* [Drawio](https://github.com/jgraph/drawio-desktop) • Driagrams
+* [PlantUML](https://plantuml.com) • Driagrams from plain text
 * [iThoughtX](https://www.toketaware.com/ithoughts-osx) • Mindmapping
+* [Excalidraw](https://github.com/excalidraw/excalidraw) • Hand-drawn like Diagrams
 
 ### Others
 * [🦊](https://www.mozilla.org/firefox/new) • Web Browser
@@ -76,6 +79,5 @@ curl -sSL https://raw.githubusercontent.com/ammancilla/war_machine/master/bin/in
 * [Dash](https://kapeli.com/dash) • Documentation
 * [Flow](https://apps.apple.com/app/flow-focus-and-work-timer/id1423210932) • Pomodoro
 * [Alfred](https://www.alfredapp.com) • Productivity
-* [Rambox](https://rambox.pro/#home) • Social Networks
 * [Spotify](https://www.spotify.com) • Music
 * [1Password](https://1password.com) • Password Manager

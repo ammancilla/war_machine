@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # War Machine - MacOS
 
 #
@@ -88,9 +87,31 @@ installDraculaTheme () {
 	if [ -e "$ZSH/themes/dracula.zsh-theme" ]; then
 		echo "✅ • Dracula - ZSH"
 	else
-		git clone https://github.com/dracula/zsh.git "$DRACULA_ZSH"
+		if [ ! -e "$DRACULA_ZSH"  ]; then
+			git clone https://github.com/dracula/zsh.git "$DRACULA_ZSH"
+		fi
+
 		ln -s "$DRACULA_ZSH/dracula.zsh-theme" "$ZSH/themes/dracula.zsh-theme"
 	fi
+}
+
+installGh () {
+	# - gh (jdxcode/gh)
+	GH=$ZSH/plugins/gh
+
+	if [ ! -d "$GH" ]; then
+		mkdir "$GH"
+	fi
+
+	if [ ! -e "$GH/_gh" ]; then
+		curl -sSL https://raw.githubusercontent.com/jdxcode/gh/master/zsh/gh/_gh --output "$GH/_gh"
+	fi
+
+	if [ ! -e "$GH/gh.plugin.zsh" ]; then
+		curl -sSL https://raw.githubusercontent.com/jdxcode/gh/master/zsh/gh/gh.plugin.zsh --output "$GH/gh.plugin.zsh"
+	fi
+
+	echo "✅ • gh"
 }
 
 dotfiles () {
@@ -145,7 +166,6 @@ warMachine() {
 	# • CORE
 	#
 	brewInstall zsh tmux
-	brewCaskInstall font-hack-nerd-font
 
 	if [ -d "$ZSH" ]; then
 		echo "✅ • Oh-My-Zsh"
@@ -154,35 +174,19 @@ warMachine() {
 	fi
 
 	installDraculaTheme
+	brewCaskInstall font-hack-nerd-font
 
 	#
 	# • SOFTWARE DEVELOPMENT
 	#
+	installGh
 	brewInstall vim git
 	brewCaskInstall docker
-
-	# - gh
-	GH=$ZSH/plugins/gh
-
-	if [ ! -d "$GH" ]; then
-		mkdir "$GH"
-	fi
-
-	if [ ! -e "$GH/_gh" ]; then
-		curl -sSL https://raw.githubusercontent.com/jdxcode/gh/master/zsh/gh/_gh --output "$GH/_gh"
-	fi
-
-	if [ ! -e "$GH/gh.plugin.zsh" ]; then
-		curl -sSL https://raw.githubusercontent.com/jdxcode/gh/master/zsh/gh/gh.plugin.zsh --output "$GH/gh.plugin.zsh"
-	fi
-
-	echo "✅ • gh"
 
 	#
 	# • OPERATIONS
 	#
-	brewInstall fd kap kind thefuck man ssh curl top du lsof watch jq fzf awscli the_silver_searcher git-open htop cmake kubectl kubectx stern git-crypt gpg datawire/blackbird/telepresence
-	brewCaskInstall lens
+	brewInstall fd bat kap kind thefuck man ssh curl top du lsof watch jq fzf awscli the_silver_searcher git-open htop cmake kubectl kubectx stern git-crypt gpg
 
 	#
 	# • DIAGRAMS
@@ -192,7 +196,7 @@ warMachine() {
 	#
 	# • OTHERS
 	#
-	brewCaskInstall 1password firefox alfred spotify rambox
+	brewCaskInstall 1password firefox alfred spotify
 
 	#
 	# • DOTFILES
@@ -203,7 +207,7 @@ warMachine() {
 		printf "Would you like to update War Machine? [Y/n] "; read -r answer
 
 		if [ "$answer" == "Y" ]; then
-			cd "$WAR_MACHINE" && git checkout master && git pull origin/master --rebase
+			cd "$WAR_MACHINE" && git checkout master && git pull --rebase
 		fi
 	fi
 
