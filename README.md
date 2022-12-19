@@ -1,5 +1,5 @@
 # 💻 • War Machine
-Apps, tools & configuration I use to make the world a better place, from my keyboard.
+Apps, tools & configuration for happy hacking.
 
 ![](.support/war_machine.gif)
 
@@ -22,6 +22,8 @@ curl -sSL https://raw.githubusercontent.com/ammancilla/war_machine/master/bin/in
 * [Ruby](https://www.ruby-lang.org/en/)
 * [Elixir](https://elixir-lang.org/)
 * [Terraform](https://www.terraform.io/language)
+* [Shell Scripting](https://tldp.org/LDP/abs/html/index.html)
+  - [shellcheck](https://github.com/koalaman/shellcheck)
 
 ### Software Development
 * [gh](https://github.com/jdxcode/gh)
@@ -30,6 +32,7 @@ curl -sSL https://raw.githubusercontent.com/ammancilla/war_machine/master/bin/in
   - [vim-plug](https://github.com/junegunn/vim-plug)
 * [asdf](https://github.com/asdf-vm/asdf)
 * [Docker](https://www.docker.com/)
+  - [Hadolint](https://github.com/hadolint/hadolint)
   - [Docker Compose](https://docs.docker.com/compose/)
 * [Kubernetes](https://kubernetes.io/)
   - [Lens](https://k8slens.dev/)
@@ -40,7 +43,6 @@ curl -sSL https://raw.githubusercontent.com/ammancilla/war_machine/master/bin/in
   - [kube-ps1](https://github.com/jonmosco/kube-ps1)
   - [Kustomize](https://kustomize.io/)
   - [Telepresence](https://www.telepresence.io/)
-* [Shell Scripting](https://tldp.org/LDP/abs/html/index.html)
 
 ### Operations
 * du
@@ -59,19 +61,20 @@ curl -sSL https://raw.githubusercontent.com/ammancilla/war_machine/master/bin/in
 * watch
 * [iftop](https://code.blinkace.com/pdw/iftop)
 * [insomia](https://github.com/Kong/insomnia)
+* [postico](https://eggerapps.at/postico2/)
 * [thefuck](https://github.com/nvbn/thefuck)
 * [aws-cli](https://github.com/aws/aws-cli)
 * [git-open](https://github.com/paulirish/git-open)
 * [git-crypt](https://github.com/AGWA/git-crypt)
 * [iptraf-ng](https://wiki.ipfire.org/addons/iptraf-ng)
-* [shellcheck](https://github.com/koalaman/shellcheck)
+* [mitmproxy](https://mitmproxy.org/)
 * [the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
 
 ### Diagrams
 * [Drawio](https://github.com/jgraph/drawio-desktop) • Driagrams
 * [PlantUML](https://plantuml.com) • Driagrams from plain text
 * [iThoughtX](https://www.toketaware.com/ithoughts-osx) • Mindmapping
-* [Excalidraw](https://github.com/excalidraw/excalidraw) • Hand-drawn like Diagrams
+* [Excalidraw](https://github.com/excalidraw/excalidraw) • Hand-drawn like diagrams
 
 ### Others
 * [🦊](https://www.mozilla.org/firefox/new) • Web Browser

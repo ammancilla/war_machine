@@ -215,7 +215,7 @@ warMachine() {
 		mkdir "$HOME/.ssh"
 	fi
 
-	dotfiles vimrc zshrc tmux.conf ssh/config gitconfig gitignore tool-versions
+	dotfiles vimrc zshrc tmux.conf ssh/config gitconfig gitignore tool-versions dockerignore asdfrc
 
 	echo "✅ • Dotfiles"
 
