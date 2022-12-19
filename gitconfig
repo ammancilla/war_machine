@@ -1,9 +1,6 @@
-[user]
-# Please adapt and uncomment the following lines:
-#        name = Example Name
-#        email = email@example.com
-
 [pull]
 	rebase = false
 [core]
 	excludesFile = ~/.gitignore
+[push]
+	autoSetupRemote = true

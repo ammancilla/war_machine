@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # War Machine - MacOS
 
 #
@@ -123,11 +124,10 @@ dotfiles () {
 
 		if [ -e "$DOTFILE" ]; then
 
-			printf "Dotfile %s exists, would you like to overwrite it? [Y/n] " "$FILE"; read -r answer
+			printf "Dotfile %s exists, overwrite it? [Y/n] " "$FILE" && read -r answer
 			if [ "$answer" == "Y" ]; then
 				rm -f "$DOTFILE.warmachine"
-				cp "$DOTFILE" "$DOTFILE.warmachine"
-				rm "$DOTFILE"
+				mv "$DOTFILE" "$DOTFILE.warmachine"
 				ln -s "$WAR_MACHINE/$FILE" "$DOTFILE"
 			fi
 		else
@@ -204,7 +204,7 @@ warMachine() {
 	if [ ! -d "$WAR_MACHINE" ]; then
 		git clone https://github.com/ammancilla/war_machine.git "$WAR_MACHINE"
 	else
-		printf "Would you like to update War Machine? [Y/n] "; read -r answer
+		printf "\nUpdate War Machine? [Y/n] " && read -r answer
 
 		if [ "$answer" == "Y" ]; then
 			cd "$WAR_MACHINE" && git checkout master && git pull --rebase
@@ -215,7 +215,17 @@ warMachine() {
 		mkdir "$HOME/.ssh"
 	fi
 
-	dotfiles vimrc zshrc tmux.conf ssh/config gitconfig gitignore tool-versions
+	dotfiles vimrc zshrc tmux.conf ssh/config gitconfig gitignore tool-versions dockerignore asdfrc
+
+	printf "\nConfigure your git name and email? [Y/n] " && read -r answer
+
+	if [ "$answer" == "Y" ]; then
+		printf "\nName: " && read -r name
+		git config --global user.name "$name"
+
+		printf "Email: " && read -r email
+		git config --global user.email "$email"
+	fi
 
 	echo "✅ • Dotfiles"
 
