@@ -28,6 +28,8 @@ export CHSH=no
 export RUNZSH=no
 export WAR_MACHINE="$HOME/.war_machine"
 
+declare -A dotfiles=( ["starship.toml"]="$HOME/.config/starship.toml" )
+
 #
 # • FUNCTIONS
 #
@@ -67,7 +69,7 @@ brewCaskInstall () {
 
 remoteScriptInstall () {
 	local shell="${2:-sh}"
-	local scriptLocation=$1
+	local scriptLocation="$1"
 
 	echo "$shell"
 	echo "$scriptLocation"
@@ -98,7 +100,7 @@ installDraculaTheme () {
 
 installGh () {
 	# - gh (jdxcode/gh)
-	GH=$ZSH/plugins/gh
+	GH="$ZSH/plugins/gh"
 
 	if [ ! -d "$GH" ]; then
 		mkdir "$GH"
@@ -115,25 +117,39 @@ installGh () {
 	echo "✅ • gh"
 }
 
+dotfile () {
+	local name="$1"
+	local file="${dotfiles[$name]}"
+
+	if [ -z "$file" ]; then
+		file="$HOME/.$name"
+	fi
+
+	echo "$file"
+}
+
 dotfiles () {
+	local file
 	local answer
+	local war_machine_file="$WAR_MACHINE/$name"
 
-	for FILE in "$@"
+	for name in "$@"
 	do
-		local DOTFILE=$HOME/.$FILE
+		file="$(dotfile "$name")"
+		echo $file
+	       	war_machine_file="$WAR_MACHINE/$name"
 
-		if [ -e "$DOTFILE" ]; then
-
-			printf "Dotfile %s exists, overwrite it? [Y/n] " "$FILE" && read -r answer
+		if [ -e "$file" ]; then
+			diff "$file" "$war_machine_file"
+			printf "File %s exists, overwrite it? [Y/n] " "$file" && read -r answer
 			if [ "$answer" == "Y" ]; then
-				rm -f "$DOTFILE.warmachine"
-				mv "$DOTFILE" "$DOTFILE.warmachine"
-				ln -s "$WAR_MACHINE/$FILE" "$DOTFILE"
+				rm -f "$file.warmachine"
+				mv "$file" "$file.warmachine"
+				ln -s "$war_machine_file" "$file"
 			fi
 		else
-			ln -s "$WAR_MACHINE/$FILE" "$DOTFILE"
+			ln -s "$war_machine_file" "$file"
 		fi
-
 	done
 }
 
@@ -165,7 +181,7 @@ warMachine() {
 	#
 	# • CORE
 	#
-	brewInstall zsh tmux
+	brewInstall zsh tmux starship
 
 	if [ -d "$ZSH" ]; then
 		echo "✅ • Oh-My-Zsh"
@@ -215,7 +231,11 @@ warMachine() {
 		mkdir "$HOME/.ssh"
 	fi
 
-	dotfiles vimrc zshrc tmux.conf ssh/config gitconfig gitignore tool-versions dockerignore asdfrc
+	if [ ! -d "$HOME/.config" ]; then
+		mkdir "$HOME/.config"
+	fi
+
+	dotfiles vimrc zshrc tmux.conf ssh/config gitconfig gitignore tool-versions dockerignore asdfrc starship.toml
 
 	printf "\nConfigure your git name and email? [Y/n] " && read -r answer
 

@@ -12,6 +12,7 @@ curl -sSL https://raw.githubusercontent.com/ammancilla/war_machine/master/bin/in
 ### Core
 * Font • [**Hack**](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack)
 * Shell • [**ZSH**](https://zsh.sourceforge.io/)
+  - [Starship](https://starship.rs/)
   - [Oh-My-Zsh](https://github.com/ohmyzsh/ohmyzsh)
 * Terminal • [**MacOS Terminal App**](https://en.wikipedia.org/wiki/Terminal_(macOS))
   - [Tmux](https://github.com/tmux/tmux/wiki)
