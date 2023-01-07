@@ -3,13 +3,12 @@ export ZSH=$HOME/.oh-my-zsh
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export WAR_MACHINE=$HOME/.war_machine
-export KUBE_PS1_SEPARATOR=""
 
 # -- Theme
 ZSH_THEME="dracula"
 
 # -- Plugins
-plugins=(git kube-ps1 gh asdf)
+plugins=(git gh asdf)
 
 # -- Initialize
 source $ZSH/oh-my-zsh.sh
