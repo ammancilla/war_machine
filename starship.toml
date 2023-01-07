@@ -1,0 +1,76 @@
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$ruby\
+$elixir\
+$kubernetes\
+$cmd_duration\
+$line_break\
+$battery\
+$character"""
+
+[battery]
+format = '[$symbol$percentage]($style) '
+disabled = false
+
+[[battery.display]]
+threshold = 10
+style = 'red'
+
+[directory]
+style = "blue"
+read_only = " "
+
+[character]
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](purple)"
+success_symbol = "[❯](green)"
+
+[git_branch]
+format='[$symbol$branch]($style) '
+symbol = " "
+style = "bright-black"
+
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind)]($style)"
+style = "cyan"
+conflicted = "​"
+untracked = "​"
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
+disabled = false
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+cherry_pick = '[🍒 PICKING](bold red)'
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "yellow"
+
+[kubernetes]
+format = 'on [$symbol$context( \(:$namespace\))]($style) '
+symbol = "⛵️ "
+disabled = true
+
+[elixir]
+format = 'via [$symbol]($style)'
+symbol = " "
+disabled = true
+
+[python]
+format = 'via [$symbol]($style)'
+symbol = " "
+disabled = true
+
+[ruby]
+format = 'via [$symbol]($style)'
+symbol = " "
+disabled = true

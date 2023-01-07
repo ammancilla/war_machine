@@ -47,8 +47,4 @@ alias ycminstall='~/.vim/plugged/YouCompleteMe/install.py'
 
 # -- Configuration
 eval $(thefuck --alias)
-
-kubeps1=$(which kube_ps1)
-if [ $? -eq 0 ] ; then
-  PROMPT=$PROMPT'$(kube_ps1) '
-fi
+eval $(starship init zsh)
