@@ -58,6 +58,7 @@ curl -sSL https://raw.githubusercontent.com/ammancilla/war_machine/master/bin/in
 * curl
 * htop
 * [make](https://www.gnu.org/software/make/)
+* [delta](https://github.com/dandavison/delta)
 * watch
 * [iftop](https://code.blinkace.com/pdw/iftop)
 * [insomia](https://github.com/Kong/insomnia)

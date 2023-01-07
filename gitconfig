@@ -1,6 +1,22 @@
+[core]
+        pager = delta
+        excludesFile = ~/.gitignore
+
 [pull]
 	rebase = false
-[core]
-	excludesFile = ~/.gitignore
+
 [push]
-	autoSetupRemote = true
+        autoSetupRemote = true
+
+[diff]
+        colorMoved = default
+
+[merge]
+        conflictstyle = diff3
+
+[delta]
+        navigate = true
+        line-numbers = true
+
+[interactive]
+        diffFilter = delta --color-only
