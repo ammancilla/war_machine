@@ -186,7 +186,7 @@ warMachine() {
 	#
 	# • OPERATIONS
 	#
-	brewInstall fd bat kap kind thefuck man ssh curl top du lsof watch jq fzf awscli the_silver_searcher git-open htop cmake kubectl kubectx stern git-crypt gpg
+	brewInstall fd bat kap git-delta kind thefuck man ssh curl top du lsof watch jq fzf awscli the_silver_searcher git-open htop cmake kubectl kubectx stern git-crypt gpg
 
 	#
 	# • DIAGRAMS

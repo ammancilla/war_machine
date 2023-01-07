@@ -1,5 +1,9 @@
-# Path to your oh-my-zsh installation.
+# -- Exports
 export ZSH=$HOME/.oh-my-zsh
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export WAR_MACHINE=$HOME/.war_machine
+export KUBE_PS1_SEPARATOR=""
 
 # -- Theme
 ZSH_THEME="dracula"
@@ -9,21 +13,13 @@ plugins=(git kube-ps1 gh asdf)
 
 # -- Initialize
 source $ZSH/oh-my-zsh.sh
-
-#
-# User configuration
-#
-
-# -- Exports
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-export WAR_MACHINE=$HOME/.war_machine
-export KUBE_PS1_SEPARATOR=""
+source $WAR_MACHINE/helpers/fgco.sh
 
 # -- Aliases
 alias gfp='git push -f'
 alias gop='git-open'
 alias grh='git reset --hard'
+alias gdst='git diff --staged'
 
 alias zshload='source ~/.zshrc'
 alias zshconfig='vim ~/.zshrc'
@@ -47,14 +43,9 @@ alias kex='kubectl exec -ti'
 
 alias bx='bundle exec'
 
-#
-# Helper functions
-#
-source $WAR_MACHINE/helpers/fgco.sh
+alias ycminstall='~/.vim/plugged/YouCompleteMe/install.py'
 
-#
-# Apps configuration
-#
+# -- Configuration
 eval $(thefuck --alias)
 
 kubeps1=$(which kube_ps1)

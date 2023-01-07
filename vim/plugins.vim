@@ -7,7 +7,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#tab_min_count = 2
-" -------
 
 " - Tmux
 " https://github.com/neovim/neovim/issues/2048
@@ -36,7 +35,6 @@ call NERDTreeHighlightFile('rb', 'Red', 'none', '#ffa500', '#151515')
 map <silent> <Leader>n :NERDTreeToggle<CR>
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" -------
 
 " - Ack
 if executable('ag')
@@ -44,29 +42,22 @@ if executable('ag')
 endif
 
 cnoreabbrev Ack Ack!
-" -------
 
 " - Ctrl - p
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/node_modules/*,*/platforms/*,*/plugins/*
-" -------
 
 " - Indent Line
 let g:indentLine_char = '･'
-" -------
 
 " - Switch
 let g:switch_mapping = '-'
-" -------
 
 " - Terraform
 let g:terraform_align = 1
 let g:terraform_fmt_on_save = 1
-" -------
 
 " - Elixir
 let g:mix_format_on_save = 1
-" -------
 
 " - Markdown
 let g:markdown_folding = 1
-" -------

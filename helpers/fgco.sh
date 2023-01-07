@@ -5,8 +5,5 @@
 #
 
 fgco() {
-  local branches branch
-	branches=$(git branch -vv) &&
-	branch=$(echo "$branches" | fzf +m --query="$1") &&
-    git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+  git branch -vv | fzf +m --query="$1" | awk '{print $1}' | xargs git checkout
 }

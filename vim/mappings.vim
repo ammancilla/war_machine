@@ -7,4 +7,13 @@ noremap <Left> <nop>
 noremap <Right> <nop>
 
 " - Space clears last search highlight
-map <silent> <Space> :noh<CR>
+nnoremap <silent> <Space> :noh<CR>
+
+" \f to: Search files with fzf
+nnoremap <Bslash>f :Files<CR>
+
+" \b to: Search open buffers with fzf
+nnoremap <Bslash>b :Buffers<CR>
+
+" \s to: Search text fzf
+nnoremap <Bslash>s :Ag<CR>
