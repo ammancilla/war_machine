@@ -33,14 +33,17 @@ declare -A dotfiles=( ["starship.toml"]="$HOME/.config/starship.toml" )
 #
 # • FUNCTIONS
 #
+printcheck () {
+	printf "\n✅ $1"
+}
 systemCheck () {
 	if [ "$(uname)" != "Darwin" ]; then
-		echo "🥴 • Unsupported Operating System"
+		echo "🥴 Unsupported Operating System"
 		exit 1
 	fi
 
 	if [ -z "$(which curl)" ]; then
-		echo "🥴 • Install curl first"
+		echo "🥴 Install curl first"
 		exit 1
 	fi
 }
@@ -49,7 +52,7 @@ brewInstall () {
 	for formula in "$@"
 	do
 		if [ "$(which "$formula")" ] || [ "$(brew ls "$formula" 2>/dev/null)" ]; then
-			echo "✅ • $formula"
+			printcheck "$formula"
 		else
 			brew install "$formula"
 		fi
@@ -60,7 +63,7 @@ brewCaskInstall () {
 	for app in "$@"
 	do
 		if [ "$(which "$app")" ] || [ "$(brew list --cask "$app" 2>/dev/null)" ] || [ "$(ls /Applications/ | grep -i "$app")" ]; then
-			echo "✅ • $app"
+			printcheck "$app"
 		else
 			brew install --cask "$app"
 		fi
@@ -82,16 +85,16 @@ installDraculaTheme () {
 	local DRACULA_ZSH=$HOME/src/github.com/dracula/zsh
 
 	if [ -d "$DRACULA_TERMINAL" ]; then
-		echo "✅ • Dracula - Terminal APP"
+		printcheck "Dracula - Terminal APP"
 	else
-		git clone https://github.com/dracula/terminal-app.git "$DRACULA_TERMINAL"
+		git clone https://github.com/dracula/terminal-app.git >/dev/null "$DRACULA_TERMINAL"
 	fi
 
 	if [ -e "$ZSH/themes/dracula.zsh-theme" ]; then
-		echo "✅ • Dracula - ZSH"
+		printcheck "Dracula - ZSH"
 	else
 		if [ ! -e "$DRACULA_ZSH"  ]; then
-			git clone https://github.com/dracula/zsh.git "$DRACULA_ZSH"
+			git clone https://github.com/dracula/zsh.git >/dev/null "$DRACULA_ZSH"
 		fi
 
 		ln -s "$DRACULA_ZSH/dracula.zsh-theme" "$ZSH/themes/dracula.zsh-theme"
@@ -102,9 +105,7 @@ installGh () {
 	# - gh (jdxcode/gh)
 	GH="$ZSH/plugins/gh"
 
-	if [ ! -d "$GH" ]; then
-		mkdir "$GH"
-	fi
+	mkdir -p "$GH"
 
 	if [ ! -e "$GH/_gh" ]; then
 		curl -sSL https://raw.githubusercontent.com/jdxcode/gh/master/zsh/gh/_gh --output "$GH/_gh"
@@ -114,7 +115,18 @@ installGh () {
 		curl -sSL https://raw.githubusercontent.com/jdxcode/gh/master/zsh/gh/gh.plugin.zsh --output "$GH/gh.plugin.zsh"
 	fi
 
-	echo "✅ • gh"
+	printcheck "gh"
+}
+
+installZshAutocompletionPlugin () {
+	local REPO="$HOME/src/github.com/zsh-users/zsh-autosuggestions"
+
+	if [ ! -e "$REPO" ]; then
+		git clone https://github.com/zsh-users/zsh-autosuggestions >/dev/null "$REPO"
+
+		ln -s "$REPO" "$ZSH/custom/plugins/zsh-autosuggestions"
+	fi
+
 }
 
 dotfile () {
@@ -132,23 +144,33 @@ dotfiles () {
 	local file
 	local answer
 	local war_machine_file="$WAR_MACHINE/$name"
+	local diff_exit_code
 
 	for name in "$@"
 	do
 		file="$(dotfile "$name")"
-		echo $file
+		diff_exit_code=
 	       	war_machine_file="$WAR_MACHINE/$name"
 
 		if [ -e "$file" ]; then
-			diff "$file" "$war_machine_file"
-			printf "File %s exists, overwrite it? [Y/n] " "$file" && read -r answer
-			if [ "$answer" == "Y" ]; then
-				rm -f "$file.warmachine"
-				mv "$file" "$file.warmachine"
-				ln -s "$war_machine_file" "$file"
+			diff "$file" "$war_machine_file" &>/dev/null || diff_exit_code=$?
+
+			if [ "$diff_exit_code" = "1" ]; then
+				printf "\n🗃️  File $file exists...\n"
+				delta -s "$file" "$war_machine_file" || true
+				printf "\nReplace it? [Y/n] "
+				read -r answer
+				if [ "$answer" == "Y" ]; then
+					mv "$file" "$file.warmachine"
+					cp "$war_machine_file" "$file"
+				fi
+			else
+				printf "\n🗃️  File $file exists, skipping."
 			fi
+
 		else
-			ln -s "$war_machine_file" "$file"
+			printf "\n🗃️  File $file added."
+			cp "$war_machine_file" "$file"
 		fi
 	done
 }
@@ -163,7 +185,7 @@ warMachine() {
 	# • HOMEBREW
 	#
 	if [ "$(which brew)" ]; then
-		echo "✅ • Howbrew"
+		printcheck "Howbrew"
 	else
 		remoteScriptInstall https://raw.githubusercontent.com/Homebrew/install/master/install.sh bash
 	fi
@@ -184,14 +206,14 @@ warMachine() {
 	brewInstall zsh tmux starship
 
 	if [ -d "$ZSH" ]; then
-		echo "✅ • Oh-My-Zsh"
+		printcheck "Oh-My-Zsh"
 	else
 		remoteScriptInstall https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
 	fi
 
+	installZshAutocompletionPlugin
 	installDraculaTheme
 	brewCaskInstall font-hack-nerd-font
-
 	#
 	# • SOFTWARE DEVELOPMENT
 	#
@@ -202,7 +224,7 @@ warMachine() {
 	#
 	# • OPERATIONS
 	#
-	brewInstall fd bat kap git-delta kind thefuck man ssh curl top du lsof watch jq fzf awscli the_silver_searcher git-open htop cmake kubectl kubectx stern git-crypt gpg
+	brewInstall fd bat kap git-delta thefuck man ssh curl top du lsof watch jq fzf the_silver_searcher git-open htop cmake git-crypt gpg
 
 	#
 	# • DIAGRAMS
@@ -217,37 +239,38 @@ warMachine() {
 	#
 	# • DOTFILES
 	#
-	if [ ! -d "$WAR_MACHINE" ]; then
-		git clone https://github.com/ammancilla/war_machine.git "$WAR_MACHINE"
+	if [ -e "$WAR_MACHINE" ]; then
+		cd "$WAR_MACHINE" && git checkout master &>/dev/null && git pull --rebase &>/dev/null
 	else
-		printf "\nUpdate War Machine? [Y/n] " && read -r answer
+		WAR_MACHINE_REPO="$HOME/src/github.com/ammancilla/war_machine"
 
-		if [ "$answer" == "Y" ]; then
-			cd "$WAR_MACHINE" && git checkout master && git pull --rebase
+		if [ ! -e "$WAR_MACHINE_REPO" ]; then
+			git clone https://github.com/ammancilla/war_machine.git &>/dev/null "$WAR_MACHINE_REPO"
 		fi
+
+		ln -s "$WAR_MACHINE_REPO" "$WAR_MACHINE"
 	fi
 
-	if [ ! -d "$HOME/.ssh" ]; then
-		mkdir "$HOME/.ssh"
-	fi
+	printf "\n\nDOTFILES"
+	printf "\n--------\n"
 
-	if [ ! -d "$HOME/.config" ]; then
-		mkdir "$HOME/.config"
-	fi
+	mkdir -p "$HOME/.ssh"
+	mkdir -p "$HOME/.config"
 
 	dotfiles vimrc zshrc tmux.conf ssh/config gitconfig gitignore tool-versions dockerignore asdfrc starship.toml
 
-	printf "\nConfigure your git name and email? [Y/n] " && read -r answer
+	printf "\n\nGIT"
+	printf "\n--------\n"
+
+	read -p "Configure your git name and email? [Y/n] " answer
 
 	if [ "$answer" == "Y" ]; then
-		printf "\nName: " && read -r name
+		read -p "Name: " name
 		git config --global user.name "$name"
 
-		printf "Email: " && read -r email
+		read -p "Email: " email
 		git config --global user.email "$email"
 	fi
-
-	echo "✅ • Dotfiles"
 
 	#
 	# • PROGRAMMING LANGUAGES

@@ -8,7 +8,7 @@ export WAR_MACHINE=$HOME/.war_machine
 ZSH_THEME="dracula"
 
 # -- Plugins
-plugins=(git gh asdf)
+plugins=(git gh asdf zsh-autosuggestions)
 
 # -- Initialize
 source $ZSH/oh-my-zsh.sh
