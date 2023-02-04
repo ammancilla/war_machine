@@ -43,9 +43,6 @@ endif
 
 cnoreabbrev Ack Ack!
 
-" - Ctrl - p
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/node_modules/*,*/platforms/*,*/plugins/*
-
 " - Indent Line
 let g:indentLine_char = '･'
 
