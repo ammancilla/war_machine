@@ -1,22 +1,24 @@
-" --- CONFIGURATION
+" === VIM CONFIGURATION
 "
-"  Most were taken from Neovim defaults.
-"  https://neovim.io/doc/user/vim_diff.html#nvim-defaults
+" Most were taken from Neovim defaults.
+" https://neovim.io/doc/user/vim_diff.html#nvim-defaults
 
-filetype plugin on
+filetype plugin indent on
 
 set autoread
 set background=dark
 set complete-=i
-set encoding=utf-8
 set expandtab
 set incsearch
 set langnoremap
-set nocompatible
 set showcmd
 set smarttab
 set t_Co=256
-"
+set encoding=utf-8
+
+" - Scripting encoding
+scriptencoding utf-8
+
 " - Dracula theme
 colorscheme dracula
 

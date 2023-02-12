@@ -1,4 +1,77 @@
-" PLUGINS CONFIGURATION
+" === PLUGIN MANAGER
+" https://github.com/junegunn/vim-plug
+"
+" Looking for awesome plugins?
+" http://vimawesome.com/
+
+" Automatically install VimPlug
+" https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $HOME/.vimrc
+endif
+
+call plug#begin()
+
+" - Colorscheme
+Plug 'dracula/vim', { 'as': 'dracula' }
+
+" - Statusbar
+Plug 'vim-airline/vim-airline'
+
+" - Tmux
+Plug 'christoomey/vim-tmux-navigator'
+
+" - Nerdtree
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" - Git
+Plug 'airblade/vim-gitgutter'
+Plug 'shumphrey/fugitive-gitlab.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+
+" - Ruby
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-rails'
+
+" - Markdown
+Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+
+" - Elixir
+Plug 'elixir-editors/vim-elixir'
+
+" Even though ALE supports a mix format fixer, I am keeping this one
+" because it prevents saving a file that has syntax errors and opens
+" a window with the error stacktrace, making it super easy to catch
+" early and fix those super common errors.
+Plug 'mhinz/vim-mix-format'
+
+" - Others
+Plug 'AndrewRadev/switch.vim'
+Plug 'Valloric/YouCompleteMe'
+Plug 'Yggdroot/indentLine'
+Plug 'dense-analysis/ale'
+Plug 'easymotion/vim-easymotion'
+Plug 'elzr/vim-json'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'mhinz/vim-startify'
+Plug 'mileszs/ack.vim'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-surround'
+
+call plug#end()
+
+"
+" === PLUGINS CONFIGURATION
 "
 " - Airline
 let g:airline_theme = 'dracula'
@@ -49,12 +122,28 @@ let g:indentLine_char = '･'
 " - Switch
 let g:switch_mapping = '-'
 
-" - Terraform
-let g:terraform_align = 1
-let g:terraform_fmt_on_save = 1
-
 " - Elixir
 let g:mix_format_on_save = 1
 
 " - Markdown
 let g:markdown_folding = 1
+
+" - ALE
+let g:ale_linters = {
+\  'bash': ['shellcheck', 'shfmt'],
+\  'haml': ['haml-lint'],
+\  'make': ['checkmake'],
+\  'json': ['jq'],
+\  'ruby': ['reek', 'rufo', 'brakeman', 'rubocop'],
+\  'elixir': ['mix', 'credo', 'dialyxir'],
+\  'docker': ['hadolint'],
+\  'terraform': ['checkov', 'terraform', 'terraform-fmt-fixer']
+\}
+
+let g:ale_fixers = {
+\  '*': ['remove_trailing_lines', 'trim_whitespace'],
+\  'bash': ['shfmt'],
+\  'json': ['jq'],
+\}
+
+let g:ale_fix_on_save = 1

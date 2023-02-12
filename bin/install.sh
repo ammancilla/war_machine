@@ -34,8 +34,9 @@ declare -A dotfiles=( ["starship.toml"]="$HOME/.config/starship.toml" )
 # • FUNCTIONS
 #
 printcheck () {
-	printf "\n✅ $1"
+	printf "\n✅ %s" "$1"
 }
+
 systemCheck () {
 	if [ "$(uname)" != "Darwin" ]; then
 		echo "🥴 Unsupported Operating System"
@@ -62,7 +63,7 @@ brewInstall () {
 brewCaskInstall () {
 	for app in "$@"
 	do
-		if [ "$(which "$app")" ] || [ "$(brew list --cask "$app" 2>/dev/null)" ] || [ "$(ls /Applications/ | grep -i "$app")" ]; then
+		if [ "$(brew list --cask "$app" 2>/dev/null)" ] || [ "$(ls "/Applications/" | grep -i "$app")" ]; then
 			printcheck "$app"
 		else
 			brew install --cask "$app"
@@ -156,7 +157,7 @@ dotfiles () {
 			diff "$file" "$war_machine_file" &>/dev/null || diff_exit_code=$?
 
 			if [ "$diff_exit_code" = "1" ]; then
-				printf "\n🗃️  File $file exists...\n"
+				printf "\n🗃️  File %s exists...\n" "$file "
 				delta -s "$file" "$war_machine_file" || true
 				printf "\nReplace it? [Y/n] "
 				read -r answer
@@ -165,11 +166,11 @@ dotfiles () {
 					cp "$war_machine_file" "$file"
 				fi
 			else
-				printf "\n🗃️  File $file exists, skipping."
+				printf "\n🗃️  File %s exists, skipping." "$file"
 			fi
 
 		else
-			printf "\n🗃️  File $file added."
+			printf "\n🗃️  File %s added." "$file"
 			cp "$war_machine_file" "$file"
 		fi
 	done
@@ -224,7 +225,10 @@ warMachine() {
 	#
 	# • OPERATIONS
 	#
-	brewInstall fd bat kap git-delta thefuck man ssh curl top du lsof watch jq fzf the_silver_searcher git-open htop cmake git-crypt gpg
+	brewInstall fd bat kap git-delta thefuck man ssh curl du lsof watch jq fzf the_silver_searcher git-open htop cmake git-crypt gpg
+
+	# - Linters
+	brewInstall shellcheck shfmt checkov yamllint hadolint checkmake
 
 	#
 	# • DIAGRAMS
@@ -242,13 +246,7 @@ warMachine() {
 	if [ -e "$WAR_MACHINE" ]; then
 		cd "$WAR_MACHINE" && git checkout master &>/dev/null && git pull --rebase &>/dev/null
 	else
-		WAR_MACHINE_REPO="$HOME/src/github.com/ammancilla/war_machine"
-
-		if [ ! -e "$WAR_MACHINE_REPO" ]; then
-			git clone https://github.com/ammancilla/war_machine.git &>/dev/null "$WAR_MACHINE_REPO"
-		fi
-
-		ln -s "$WAR_MACHINE_REPO" "$WAR_MACHINE"
+		git clone https://github.com/ammancilla/war_machine.git &>/dev/null "$WAR_MACHINE"
 	fi
 
 	printf "\n\nDOTFILES"
@@ -262,13 +260,13 @@ warMachine() {
 	printf "\n\nGIT"
 	printf "\n--------\n"
 
-	read -p "Configure your git name and email? [Y/n] " answer
+	read -rp "Configure your git name and email? [Y/n] " answer
 
 	if [ "$answer" == "Y" ]; then
-		read -p "Name: " name
+		read -rp "Name: " name
 		git config --global user.name "$name"
 
-		read -p "Email: " email
+		read -rp "Email: " email
 		git config --global user.email "$email"
 	fi
 

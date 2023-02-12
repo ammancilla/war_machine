@@ -23,7 +23,9 @@ curl -sSL https://raw.githubusercontent.com/ammancilla/war_machine/master/bin/in
 * [Ruby](https://www.ruby-lang.org/en/)
 * [Elixir](https://elixir-lang.org/)
 * [Terraform](https://www.terraform.io/language)
+  - [checkov](https://github.com/bridgecrewio/checkov)
 * [Shell Scripting](https://tldp.org/LDP/abs/html/index.html)
+  - [shfmt](https://github.com/mvdan/sh)
   - [shellcheck](https://github.com/koalaman/shellcheck)
 
 ### Software Development

@@ -1,4 +1,4 @@
-" --- CUSTOM MAPPINGS
+" === KEY MAPPINGS
 "
 " - Disable arrow keys
 noremap <Up> <nop>
