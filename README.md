@@ -43,7 +43,6 @@ curl -sSL https://raw.githubusercontent.com/ammancilla/war_machine/master/bin/in
   - [stern](https://github.com/wercker/stern)
   - [kubectl](https://kubectl.docs.kubernetes.io/)
   - [kubectx](https://github.com/ahmetb/kubectx)
-  - [kube-ps1](https://github.com/jonmosco/kube-ps1)
   - [Kustomize](https://kustomize.io/)
   - [Telepresence](https://www.telepresence.io/)
 
