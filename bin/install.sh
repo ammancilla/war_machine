@@ -88,14 +88,14 @@ installDraculaTheme () {
 	if [ -d "$DRACULA_TERMINAL" ]; then
 		printcheck "Dracula - Terminal APP"
 	else
-		git clone https://github.com/dracula/terminal-app.git >/dev/null "$DRACULA_TERMINAL"
+		git clone https://github.com/dracula/terminal-app.git &>/dev/null "$DRACULA_TERMINAL"
 	fi
 
 	if [ -e "$ZSH/themes/dracula.zsh-theme" ]; then
 		printcheck "Dracula - ZSH"
 	else
 		if [ ! -e "$DRACULA_ZSH"  ]; then
-			git clone https://github.com/dracula/zsh.git >/dev/null "$DRACULA_ZSH"
+			git clone https://github.com/dracula/zsh.git &>/dev/null "$DRACULA_ZSH"
 		fi
 
 		ln -s "$DRACULA_ZSH/dracula.zsh-theme" "$ZSH/themes/dracula.zsh-theme"
@@ -127,7 +127,7 @@ installZshCustomPlugin () {
 	local zsh_plugin="$ZSH/custom/plugins/$repo_name"
 
 	if [ ! -e "$local_repo" ]; then
-		git clone "$github_repo" >/dev/null "$local_repo"
+		git clone "$github_repo" &>/dev/null "$local_repo"
 	fi
 
 	if [ ! -e "$zsh_plugin" ]; then
