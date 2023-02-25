@@ -47,31 +47,7 @@ curl -sSL https://raw.githubusercontent.com/ammancilla/war_machine/master/bin/in
   - [Telepresence](https://www.telepresence.io/)
 
 ### Operations
-* du
-* [fd](https://github.com/sharkdp/fd)
-* [jq](https://github.com/stedolan/jq)
-* [bat](https://github.com/sharkdp/bat)
-* [fzf](https://github.com/junegunn/fzf)
-* [awk](https://en.wikipedia.org/wiki/AWK)
-* [man](https://man7.org/linux/man-pages/man1/man.1.html)
-* [sed](https://www.gnu.org/software/sed/manual/sed.html)
-* ssh
-* lsof
-* curl
-* htop
-* [make](https://www.gnu.org/software/make/)
-* [delta](https://github.com/dandavison/delta)
-* watch
-* [iftop](https://code.blinkace.com/pdw/iftop)
-* [insomia](https://github.com/Kong/insomnia)
-* [postico](https://eggerapps.at/postico2/)
-* [thefuck](https://github.com/nvbn/thefuck)
-* [aws-cli](https://github.com/aws/aws-cli)
-* [git-open](https://github.com/paulirish/git-open)
-* [git-crypt](https://github.com/AGWA/git-crypt)
-* [iptraf-ng](https://wiki.ipfire.org/addons/iptraf-ng)
-* [mitmproxy](https://mitmproxy.org/)
-* [the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
+du, [fd](https://github.com/sharkdp/fd), [jq](https://github.com/stedolan/jq), [bat](https://github.com/sharkdp/bat), [fzf](https://github.com/junegunn/fzf), [awk](https://en.wikipedia.org/wiki/AWK), [man](https://man7.org/linux/man-pages/man1/man.1.html), [sed](https://www.gnu.org/software/sed/manual/sed.html), ssh, lsof, curl, htop, [make](https://www.gnu.org/software/make/), [delta](https://github.com/dandavison/delta), watch, [iftop](https://code.blinkace.com/pdw/iftop), [insomia](https://github.com/Kong/insomnia), [postico](https://eggerapps.at/postico2/), [thefuck](https://github.com/nvbn/thefuck), [aws-cli](https://github.com/aws/aws-cli), [git-open](https://github.com/paulirish/git-open), [git-crypt](https://github.com/AGWA/git-crypt), [iptraf-ng](https://wiki.ipfire.org/addons/iptraf-ng), [mitmproxy](https://mitmproxy.org/), [the_silver_searcher](https://github.com/ggreer/the_silver_searcher)
 
 ### Diagrams
 * [Drawio](https://github.com/jgraph/drawio-desktop) • Driagrams
