@@ -231,7 +231,7 @@ warMachine() {
 	#
 	# • OPERATIONS
 	#
-	brewInstall fd bat kap git-delta thefuck man ssh curl du lsof watch jq fzf the_silver_searcher git-open htop cmake git-crypt gpg
+	brewInstall fd bat kap git-delta thefuck man ssh curl du lsof watch jq fzf ripgrep git-open htop cmake git-crypt gpg
 
 	# - Linters
 	brewInstall shellcheck shfmt checkov yamllint hadolint checkmake

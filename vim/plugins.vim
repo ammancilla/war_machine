@@ -60,7 +60,16 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-startify'
+
+" This plugin is in principle not needed, because
+" text search is performed by ripgrep in combination
+" with fzf. I keep this plugin around to leverage the
+" command :Ack as a way to display ripgrep's search
+" results in a permanent window within vim, for the
+" case when the ephimeral window shown by fzf is not
+" convinient.
 Plug 'mileszs/ack.vim'
+
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-commentary'
@@ -110,8 +119,8 @@ map <silent> <Leader>n :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " - Ack
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep --smart-case'
 endif
 
 cnoreabbrev Ack Ack!

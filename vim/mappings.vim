@@ -16,4 +16,4 @@ nnoremap <Bslash>f :Files<CR>
 nnoremap <Bslash>b :Buffers<CR>
 
 " \s to: Search text fzf
-nnoremap <Bslash>s :Ag<CR>
+nnoremap <Bslash>s :Rg<CR>
