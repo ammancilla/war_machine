@@ -119,15 +119,20 @@ installGh () {
 	printcheck "gh"
 }
 
-installZshAutocompletionPlugin () {
-	local REPO="$HOME/src/github.com/zsh-users/zsh-autosuggestions"
+installZshCustomPlugin () {
+	local username="$1"
+	local repo_name="$2"
+	local local_repo="$HOME/src/github.com/$username/$repo_name"
+	local github_repo="https://github.com/$username/$repo_name"
+	local zsh_plugin="$ZSH/custom/plugins/$repo_name"
 
-	if [ ! -e "$REPO" ]; then
-		git clone https://github.com/zsh-users/zsh-autosuggestions >/dev/null "$REPO"
-
-		ln -s "$REPO" "$ZSH/custom/plugins/zsh-autosuggestions"
+	if [ ! -e "$local_repo" ]; then
+		git clone "$github_repo" >/dev/null "$local_repo"
 	fi
 
+	if [ ! -e "$zsh_plugin" ]; then
+		ln -s "$local_repo" "$zsh_plugin"
+	fi
 }
 
 dotfile () {
@@ -212,7 +217,8 @@ warMachine() {
 		remoteScriptInstall https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
 	fi
 
-	installZshAutocompletionPlugin
+	installZshCustomPlugin zsh-users zsh-autosuggestions
+	installZshCustomPlugin zsh-users zsh-syntax-highlighting
 	installDraculaTheme
 	brewCaskInstall font-hack-nerd-font
 	#
@@ -294,4 +300,4 @@ warMachine
 #
 printf "\n\n📝 POST INSTALL\n"
 echo "1. Import Dracula Profile: Terminal APP > Preferences > Profiles > ⚙ > Import (from $HOME/src/github.com/dracula/terminal-app/Dracula.terminal)"
-echo "2. Change Dracula Profile Font: Terminal APP > Preferences > Profiles > Dracula > Font Change... > 'Hack Nerd Font'"
+echo "2. Change Dracula Profile Font: Terminal APP > Preferences > Profiles > Dracula > Font Change... > 'RHack Nerd Font'"
