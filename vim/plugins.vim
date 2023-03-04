@@ -140,19 +140,23 @@ let g:markdown_folding = 1
 " - ALE
 let g:ale_linters = {
 \  'bash': ['shellcheck', 'shfmt'],
-\  'haml': ['haml-lint'],
+\  'haml': ['hamllint'],
 \  'make': ['checkmake'],
 \  'json': ['jq'],
-\  'ruby': ['reek', 'rufo', 'brakeman', 'rubocop'],
+\  'ruby': ['brakeman', 'rubocop'],
 \  'elixir': ['mix', 'credo', 'dialyxir'],
 \  'docker': ['hadolint'],
-\  'terraform': ['checkov', 'terraform', 'terraform-fmt-fixer']
+\  'terraform': ['checkov', 'terraform', 'terraform-fmt-fixer'],
+\  'javascript': ['eslint'],
+\  'javascriptreact': ['eslint']
 \}
 
 let g:ale_fixers = {
 \  '*': ['remove_trailing_lines', 'trim_whitespace'],
 \  'bash': ['shfmt'],
 \  'json': ['jq'],
+\  'javascript': ['eslint'],
+\  'javascriptreact': ['eslint']
 \}
 
 let g:ale_fix_on_save = 1
