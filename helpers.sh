@@ -1,7 +1,12 @@
 #!/usr/bin/env sh
 
 #
-# Dinamically change between git branches using fzf.
+# Set of helper functions
+#
+
+#
+# Fuzzy git checkout
+# Change between git branches using fzf.
 #
 fgco () {
   limit="${2:-100}"
@@ -14,3 +19,10 @@ fgco () {
 }
 
 fgco5 () { fgco "$1" 5; }
+
+#
+# Open localhost in the given port
+#
+localhost () {
+  open "http://localhost:${1-3000}"
+}

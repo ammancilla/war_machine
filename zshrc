@@ -12,7 +12,7 @@ plugins=(git gh asdf zsh-autosuggestions zsh-syntax-highlighting)
 
 # -- Initialize
 source $ZSH/oh-my-zsh.sh
-source $WAR_MACHINE/helpers/fgco.sh
+source $WAR_MACHINE/helpers.sh
 
 # -- Aliases
 alias gfp='git push -f'
