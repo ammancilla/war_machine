@@ -187,6 +187,12 @@ dotfiles () {
 warMachine() {
 	systemCheck
 
+	if [ -e "$WAR_MACHINE" ]; then
+		cd "$WAR_MACHINE" && git checkout master &>/dev/null && git pull --rebase &>/dev/null
+	else
+		git clone https://github.com/ammancilla/war_machine.git &>/dev/null "$WAR_MACHINE"
+	fi
+
 	#
 	# • HOMEBREW
 	#
@@ -249,12 +255,6 @@ warMachine() {
 	#
 	# • DOTFILES
 	#
-	if [ -e "$WAR_MACHINE" ]; then
-		cd "$WAR_MACHINE" && git checkout master &>/dev/null && git pull --rebase &>/dev/null
-	else
-		git clone https://github.com/ammancilla/war_machine.git &>/dev/null "$WAR_MACHINE"
-	fi
-
 	printf "\n\nDOTFILES"
 	printf "\n--------\n"
 
