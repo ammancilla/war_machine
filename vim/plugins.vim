@@ -155,6 +155,7 @@ let g:ale_fixers = {
 \  '*': ['remove_trailing_lines', 'trim_whitespace'],
 \  'bash': ['shfmt'],
 \  'json': ['jq'],
+\  'ruby': ['rubocop'],
 \  'javascript': ['eslint'],
 \  'javascriptreact': ['eslint']
 \}
