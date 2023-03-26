@@ -17,3 +17,9 @@ nnoremap <Bslash>b :Buffers<CR>
 
 " \s to: Search text fzf
 nnoremap <Bslash>s :Rg<CR>
+
+" Shift + b to: Change to previous open buffer
+nnoremap <S-b> :b#<CR>
+
+" Shift + f to: Copy the current buffer's path
+nnoremap <S-f> :let @+ = expand('%')<CR>
