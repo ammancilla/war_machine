@@ -3,7 +3,7 @@
         excludesFile = ~/.gitignore
 
 [pull]
-	rebase = false
+	rebase = true
 
 [push]
         autoSetupRemote = true
