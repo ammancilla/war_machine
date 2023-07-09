@@ -57,9 +57,12 @@ du, [fd](https://github.com/sharkdp/fd), [jq](https://github.com/stedolan/jq), [
 
 ### Others
 * [🦊](https://www.mozilla.org/firefox/new) • Web Browser
-* [Kap](https://getkap.co/) • Screen Capture
 * [Dash](https://kapeli.com/dash) • Documentation
 * [Flow](https://apps.apple.com/app/flow-focus-and-work-timer/id1423210932) • Pomodoro
 * [Alfred](https://www.alfredapp.com) • Productivity
 * [Spotify](https://www.spotify.com) • Music
 * [1Password](https://1password.com) • Password Manager
+
+* Screen Capture
+  * [Kap](https://getkap.co/)
+  * [Recordit](https://recordit.co/)
