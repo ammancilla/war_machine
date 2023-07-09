@@ -264,16 +264,49 @@ warMachine() {
 	dotfiles vimrc zshrc tmux.conf ssh/config gitconfig gitignore tool-versions dockerignore asdfrc starship.toml
 
 	printf "\n\nGIT"
-	printf "\n--------\n"
+	printf "\n--------\n\n"
 
-	read -rp "Configure your git name and email? [Y/n] " answer
+	read -rp "Configure a GLOBAL git identity? [Y/n] " answer
 
 	if [ "$answer" == "Y" ]; then
+	printf "\n"
 		read -rp "Name: " name
-		git config --global user.name "$name"
-
 		read -rp "Email: " email
+
+		git config --global user.name "$name"
 		git config --global user.email "$email"
+	fi
+
+
+	printf "\n---\n\n"
+	read -rp "Configure an extra git identity for WORK? [Y/n] " answer
+
+	if [ "$answer" == "Y" ]; then
+		name="$(git config --global --get user.name)"
+		name_label="Name: "
+
+		if [ -n "$name" ]; then
+			name_label="Name ($name): "
+		fi
+
+		printf "\n"
+		read -rp "$name_label" work_name
+		read -rp "Email: " work_email
+		read -rp "Path to work projects: " work_projects_path
+		read -rp "Path to work gitconfig: " work_gitconfig_path
+
+		if [ ! -e "$work_gitconfig_path" ]; then
+			touch "$work_gitconfig_path"
+		fi
+
+		if [ -z "$var" ]; then
+			work_name="$name"
+		fi
+
+		git config --global includeif.gitdir/i:"$work_projects_path".path "$work_gitconfig_path"
+
+		git config -f "$work_gitconfig_path" user.name "$work_name"
+		git config -f "$work_gitconfig_path" user.email "$work_email"
 	fi
 
 	#
