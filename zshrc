@@ -3,6 +3,10 @@ export ZSH=$HOME/.oh-my-zsh
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export WAR_MACHINE=$HOME/.war_machine
+export PROJECTS_DIR=$HOME/src
+# - github repo switcher
+export GH_BASE_DIR=$PROJECTS_DIR
+
 
 # -- Theme
 ZSH_THEME="dracula"
