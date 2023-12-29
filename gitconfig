@@ -1,5 +1,5 @@
 [core]
-        pager = delta
+        pager = delta --diff-so-fancy
         excludesFile = ~/.gitignore
 
 [pull]
