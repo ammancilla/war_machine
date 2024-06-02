@@ -25,6 +25,7 @@ fi
 
 export ZSH="$HOME/.oh-my-zsh"
 export CHSH=no
+export REPOS="$HOME/src/github.com"
 export RUNZSH=no
 export WAR_MACHINE="$HOME/.war_machine"
 
@@ -82,8 +83,8 @@ remoteScriptInstall () {
 }
 
 installDraculaTheme () {
-	local DRACULA_TERMINAL=$HOME/src/github.com/dracula/terminal-app
-	local DRACULA_ZSH=$HOME/src/github.com/dracula/zsh
+	local DRACULA_TERMINAL=$REPOS/dracula/terminal-app
+	local DRACULA_ZSH=$REPOS/dracula/zsh
 
 	if [ -d "$DRACULA_TERMINAL" ]; then
 		printcheck "Dracula - Terminal APP"
@@ -102,37 +103,21 @@ installDraculaTheme () {
 	fi
 }
 
-installGh () {
-	# - gh (jdxcode/gh)
-	GH="$ZSH/plugins/gh"
-
-	mkdir -p "$GH"
-
-	if [ ! -e "$GH/_gh" ]; then
-		curl -sSL https://raw.githubusercontent.com/jdxcode/gh/master/zsh/gh/_gh --output "$GH/_gh"
-	fi
-
-	if [ ! -e "$GH/gh.plugin.zsh" ]; then
-		curl -sSL https://raw.githubusercontent.com/jdxcode/gh/master/zsh/gh/gh.plugin.zsh --output "$GH/gh.plugin.zsh"
-	fi
-
-	printcheck "gh"
-}
-
 installZshCustomPlugin () {
+	local symlink="$3"
 	local username="$1"
 	local repo_name="$2"
-	local local_repo="$HOME/src/github.com/$username/$repo_name"
+	local zsh_plugin=$ZSH/custom/plugins/$repo_name
+	local local_repo=$REPOS/$username/$repo_name
 	local github_repo="https://github.com/$username/$repo_name"
-	local zsh_plugin="$ZSH/custom/plugins/$repo_name"
 
 	if [ ! -e "$local_repo" ]; then
 		git clone "$github_repo" &>/dev/null "$local_repo"
 	fi
 
-	if [ ! -e "$zsh_plugin" ]; then
-		ln -s "$local_repo" "$zsh_plugin"
-	fi
+	ln -sfn "$local_repo/$symlink" "$zsh_plugin"
+
+	printcheck "$username/$repo_name"
 }
 
 dotfile () {
@@ -187,12 +172,6 @@ dotfiles () {
 warMachine() {
 	systemCheck
 
-	if [ -e "$WAR_MACHINE" ]; then
-		cd "$WAR_MACHINE" && git checkout master &>/dev/null && git pull --rebase &>/dev/null
-	else
-		git clone https://github.com/ammancilla/war_machine.git &>/dev/null "$WAR_MACHINE"
-	fi
-
 	#
 	# • HOMEBREW
 	#
@@ -202,20 +181,19 @@ warMachine() {
 		remoteScriptInstall https://raw.githubusercontent.com/Homebrew/install/master/install.sh bash
 	fi
 
-	if ! (brew tap | grep cask-versions &>/dev/null); then
-		brew tap homebrew/cask-versions
-	fi
-
-	if ! (brew tap | grep cask-fonts &>/dev/null); then
-		brew tap homebrew/cask-fonts
-	fi
-
 	brew update &>/dev/null
+
+	if [ -e "$WAR_MACHINE" ]; then
+		cd "$WAR_MACHINE" && git checkout master &>/dev/null && git pull --rebase &>/dev/null
+	else
+		git clone https://github.com/ammancilla/war_machine.git &>/dev/null "$WAR_MACHINE"
+	fi
 
 	#
 	# • CORE
 	#
-	brewInstall zsh tmux starship
+	#
+	brewInstall bash zsh tmux starship
 
 	if [ -d "$ZSH" ]; then
 		printcheck "Oh-My-Zsh"
@@ -223,16 +201,18 @@ warMachine() {
 		remoteScriptInstall https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
 	fi
 
+	brewInstall vim git
 	installZshCustomPlugin zsh-users zsh-autosuggestions
 	installZshCustomPlugin zsh-users zsh-syntax-highlighting
 	installDraculaTheme
 	brewCaskInstall font-hack-nerd-font
+
 	#
 	# • SOFTWARE DEVELOPMENT
 	#
-	installGh
 	brewInstall vim git
 	brewCaskInstall docker
+	installZshCustomPlugin jdx gh zsh/gh
 
 	#
 	# • OPERATIONS
@@ -250,7 +230,7 @@ warMachine() {
 	#
 	# • OTHERS
 	#
-	brewCaskInstall 1password firefox alfred spotify
+	brewCaskInstall 1password firefox alfred spotify telegram whatsapp
 
 	#
 	# • DOTFILES
@@ -317,10 +297,12 @@ warMachine() {
 	wait $!
 
 	asdf plugin add ruby &>/dev/null
+	asdf plugin add nodejs &>/dev/null
 	asdf plugin add elixir &>/dev/null
 	asdf plugin add erlang &>/dev/null
-	asdf plugin add nodejs &>/dev/null
+	asdf plugin-add python &>/dev/null
 	asdf plugin add postgres &>/dev/null
+	asdf plugin add terraform &>/dev/null
 	asdf plugin add terraform &>/dev/null
 
 	asdf install
