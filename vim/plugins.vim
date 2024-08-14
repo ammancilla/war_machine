@@ -156,6 +156,8 @@ let g:ale_fixers = {
 \  'bash': ['shfmt'],
 \  'json': ['jq'],
 \  'ruby': ['rubocop'],
+\  'elixir': ['mix_format'],
+\  'eelixir': ['mix_format'],
 \  'javascript': ['eslint'],
 \  'javascriptreact': ['eslint']
 \}
