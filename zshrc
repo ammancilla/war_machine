@@ -6,6 +6,7 @@ export PROJECTS=$HOME/src
 export WAR_MACHINE=$HOME/.war_machine
 # - github repo switcher (jdx/gh)
 export GH_BASE_DIR=$PROJECTS
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 
 # -- Theme
