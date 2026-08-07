@@ -55,13 +55,17 @@ du, [fd](https://github.com/sharkdp/fd), [jq](https://github.com/stedolan/jq), [
 * [iThoughtX](https://www.toketaware.com/ithoughts-osx) • Mindmapping
 * [Excalidraw](https://github.com/excalidraw/excalidraw) • Hand-drawn like diagrams
 
-### Others
+### Privacy & Security
+* [1Password](https://1password.com) • Password Manager
 * [🦊](https://www.mozilla.org/firefox/new) • Web Browser
+
+### Productivity
 * [Kap](https://getkap.co/) • Screen Capture
 * [Flow](https://apps.apple.com/app/flow-focus-and-work-timer/id1423210932) • Pomodoro
 * [Dash](https://kapeli.com/dash) • Documentation
 * [Alfred](https://www.alfredapp.com) • Productivity
-* [Spotify](https://www.spotify.com) • Music
 * [Whatsapp](https://www.whatsapp.com/download) • Messaging
 * [Telegram](https://desktop.telegram.org/) • Messaging
-* [1Password](https://1password.com) • Password Manager
+
+### Others
+* [Spotify](https://www.spotify.com) • Music
